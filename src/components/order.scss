@@ -1,0 +1,135 @@
+@import '../App.scss';
+.order{
+    .title{
+        padding: 40px;
+        font-weight: bold;
+        text-align: center;
+    }
+    margin-bottom: 50px;
+    padding: 40px 0 ;
+    .agree{
+        display: flex;
+        align-items: baseline;
+        label{
+            cursor: pointer;
+
+        }
+        p{
+            margin-left: 10px;
+            margin-bottom: 0;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+input{
+    padding: 10px;
+    background-color: #fff;
+    border: #fff;
+}
+label{
+    margin-bottom: 10px;
+}
+.tsg-form{
+    width: 70%;
+    margin: auto;
+    background-color: #f3f3f3;
+    padding: 50px;
+}
+._row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+._form-group{
+    display: flex;
+    flex-direction: column;
+}
+._row ._form-group{
+    width: 48%;
+}
+._gender{
+    display: flex;
+    padding: 10px 0;
+}
+._submit-btn{
+   text-align: right;
+}
+._submit-btn button{
+padding: 13px;
+background-color: $main-color;
+border: none;
+width: 100px;
+color: #fff;
+cursor: pointer;
+}
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -3px;
+    position: relative;
+    background-color: #fff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -3px;
+    position: relative;
+    background-color: $main-color;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+input:focus{
+    outline-color: #dcdcdc;;
+}
+
+
+.order-result{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding: 50px;
+
+    .anticon{
+        color: #fff;
+        font-size: 40px;
+        padding: 15px;
+        border-radius: 6px;
+        margin-bottom: 30px;
+        font-weight: bold;
+    } 
+    p{
+        color: #000;
+    }
+    h1{
+        font-weight: bold;
+    }
+    .success{
+        .anticon{
+            background-color: #4ac948;
+        }
+        h1{
+            color: #4ac948;
+        }
+    }
+    .fail{
+        .anticon{
+            background-color: $main-color;
+        }
+        h1{
+            color: $main-color;
+        }
+    }
+}

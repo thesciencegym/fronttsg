@@ -1,0 +1,65 @@
+@import '~antd/dist/antd.css';
+ $main-color: #c41230;
+
+body{
+  padding: 0;
+  background-color: #f8f8f8;
+}
+ .vertical-horizontal-center{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header{
+  background: url("/assets/images/header.jpg") no-repeat center;
+    height: 330px;
+    background-size: cover;
+    position: relative;
+    .overlay{
+      width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+        h1{
+          color:#fff;
+          font-size: 48px;
+        }
+        .logo{
+          position: absolute;
+          top: 40px;
+          left: 40px;
+        }
+    }
+}
+
+
+
+.footer{
+  background-color: #121212;
+  color:#fff;
+  margin: 0;
+  .ant-row{
+    padding: 50px ;
+
+  }
+  h2{
+    color:#fff;
+  }
+  .copyrights{
+    background-color: #000;
+    text-align: center;
+    padding: 20px 0;
+
+    h3{
+      color: #fff;
+      margin-bottom: 0;
+    }
+  }
+} 
+
+.ant-btn-primary {
+  background-color: $main-color;
+  border-color: $main-color;
+
+}

@@ -1,0 +1,142 @@
+@import '../App.scss';
+.home{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+.intro{
+    margin: 60px;
+    h1,h3{
+        font-weight: bold;
+    }
+}
+.tab1-wrap{
+    text-align: left;
+    width: 60%;
+    
+}
+.tab2-wrap{
+    text-align: left;
+}
+content{
+    margin-bottom: 20px;
+    h2{
+        font-weight: bold;
+    }
+    ul{
+        margin-left: 20px;
+    }
+    li{
+        font-size: 15;
+        line-height: 26px;
+    }
+    p{
+        margin-left: 50px;
+    }
+    img, .anticon{
+        margin-right: 10px;
+    }
+}
+.tab-title{
+    padding: 40px;
+    font-weight: bold;
+}
+.ant-tabs-nav .ant-tabs-tab{
+    border-color: #222;
+    background-color: #2a2a2a;
+    color: #fff;
+    padding: 14px 20px !important;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 10px !important;
+    font-size: 20px;
+}
+.plans{
+    .box{
+        background-color: #fff;
+        width: 65%;
+        margin: auto;
+        padding: 30px;
+        height: 365px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        p{
+            color: #333333;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            margin-bottom: 33px;
+        }
+        h1{
+            color: $main-color;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 35px;
+            span{
+                color: #a4a4a4;
+                font-size: 18px;
+            }
+        }
+        
+    }
+}
+button.tsg-btn{
+    border: 2px solid $main-color;
+    border-radius: 65px;
+    color: #333333;
+    display: inline-block;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 24px;
+    padding: 12px 35px;
+    width: 50%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.plans{
+    margin: 40px 0 100px;
+}
+.panel-wrap{
+    text-align: left;
+    padding: 20px;
+    .anticon svg{
+        color: $main-color;
+        font-size: 26px;
+    }
+    .tsg-btn{
+        width: 150px;
+    }
+}
+.ant-tabs-nav .ant-tabs-tab:hover {
+    color: #666 !important;
+}
+.ant-tabs-nav .ant-tabs-tab-active{
+    border-color: #f0f0f0;
+    background-color: #f8f8f8;
+    color: #666 !important;
+}
+.ant-collapse{
+    border: none !important;
+}
+.ant-collapse > .ant-collapse-item > .ant-collapse-header{
+    background-color:$main-color;
+    border-radius: 6px !important;
+    border: none;
+    text-align: left;
+    color: #fff !important;
+    font-size: 24px;
+    margin-bottom: 10px;
+    line-height: 40px !important;
+
+}
+.ant-collapse > .ant-collapse-item {
+     border-bottom: none !important
+}
+.ant-tabs-ink-bar{
+    background-color: transparent !important;
+}
