@@ -71,8 +71,8 @@ class Home extends React.Component {
                         <Row>
                             <Col lg={12} md={24} xs={24}>
                                 <div className='box'>
-                                    <p>1 Class</p>
-                                    <h1>1500 EGP <span>/class</span></h1>
+                                    <p>1 MONTH MEMBERSHIP</p>
+                                    <h1>1500 EGP</h1>
                                     <Link to='/order/1'>
                                         <Button className='tsg-btn'>BOOK NOW</Button>
                                     </Link>
@@ -80,8 +80,8 @@ class Home extends React.Component {
                             </Col>
                             <Col lg={12} md={24} xs={24}>
                                 <div className='box'>
-                                    <p>1 Week Package</p>
-                                    <h1>3300 EGP <span>/week</span></h1>
+                                    <p>3 MONTHS MEMBERSHIP</p>
+                                    <h1>3300 EGP</h1>
                                     <Link to='/order/2'>
                                         <Button className='tsg-btn'>BOOK NOW</Button>
                                     </Link>
