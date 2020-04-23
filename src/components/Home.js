@@ -51,7 +51,7 @@ class Home extends React.Component {
                             </content>
                             <content>
                                 <h3> <img src='/assets/images/team.png' width={30}/> Full Access to our online classes</h3>
-                                <p>Join to our club community.</p>
+                                <p>Steps of attending the online GX classes.</p>
                             </content>
                             
                         </div>
