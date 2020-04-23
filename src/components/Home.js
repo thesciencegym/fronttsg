@@ -153,7 +153,7 @@ class Home extends React.Component {
                     <h2 className='tab-title'>Nutrition Programs</h2>
                     <div>
                     <Collapse defaultActiveKey={['1']} accordion >
-                    <Collapse.Panel header="March To Your Goal" key="1">
+                    <Collapse.Panel header="March To Your Goal (Ramadan Edition)" key="1">
                             <div className='panel-wrap'>
                                 <content>
                                     <h3><CheckOutlined /> Purpose</h3>
