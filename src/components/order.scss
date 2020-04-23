@@ -33,7 +33,7 @@ label{
     margin-bottom: 10px;
 }
 .tsg-form{
-    width: 70%;
+    width: 60%;
     margin: auto;
     background-color: #f3f3f3;
     padding: 50px;
@@ -113,14 +113,12 @@ input:focus{
     p{
         color: #000;
     }
-    h1{
-        font-weight: bold;
-    }
+
     .success{
         .anticon{
             background-color: #4ac948;
         }
-        h1{
+        h2{
             color: #4ac948;
         }
     }
@@ -128,7 +126,7 @@ input:focus{
         .anticon{
             background-color: $main-color;
         }
-        h1{
+        h2{
             color: $main-color;
         }
     }

@@ -11,8 +11,9 @@ const { TabPane } = Tabs;
 class Home extends React.Component {
   render() {
     return <div className='home'>
+        <div className='container'>
         <div className='intro'>
-            <h1 className='red-line'>Stay Healthy, Happy and Active!</h1>
+            <h2 className='red-line'>Stay Healthy, Happy and Active!</h2>
             <h3 style={{color:'#666666'}}>Look out for new programs, live virtual classes, live webinars with tips and tricks across our social media platforms.</h3>
         </div>
         
@@ -20,11 +21,11 @@ class Home extends React.Component {
             <Tabs defaultActiveKey="1" >
                 <TabPane tab="Science@Home" key="1">
                     <div>
-                        <h1 className='tab-title red-line'>How Science@Home Works?</h1>
+                        <h2 className='tab-title red-line'>How Science@Home Works?</h2>
                         <div className='tab1-wrap'>
                             <content>
                                 
-                                <h2><img src='/assets/images/smartphone.png' width={30}/> Full Access to TSG App features:</h2>
+                                <h3><img src='/assets/images/smartphone.png' width={30}/> Full Access to TSG App features:</h3>
                                 <ul>
                                     <li>Track your daily fitness activities passed on personalized workouts that are designed specifically for you based on your fitness level and musculoskeletal condition.</li>
                                     <li>Check online classes schedule.</li>
@@ -33,52 +34,75 @@ class Home extends React.Component {
                                 </ul>
                             </content>
                             <content>
-                                <h2> <img src='/assets/images/report.png' width={30}/> Online Induction Sessions</h2>
+                                <h3> <img src='/assets/images/report.png' width={30}/> Online Induction Sessions</h3>
                                 <p>Online induction sessions for full personal and medical history.</p>
                             </content>
                             <content>
-                                <h2> <img src='/assets/images/star.png' width={30}/> Online Fitness Assessment</h2>
+                                <h3> <img src='/assets/images/star.png' width={30}/> Online Fitness Assessment</h3>
                                 <p>Online fitness assessment and postural check to determine your fitness level.</p>
                             </content>
                             <content>
-                                <h2> <img src='/assets/images/physiotherapy.png' width={30}/> Physiotherapy Screening Session</h2>
+                                <h3> <img src='/assets/images/physiotherapy.png' width={30}/> Physiotherapy Screening Session</h3>
                                 <p>Online fitness assessment and postural check to determine your fitness level.</p>
                             </content>
                             <content>
-                                <h2> <img src='/assets/images/tofu.png' width={30}/> Bi-Weekly Online Nutrition Session</h2>
+                                <h3> <img src='/assets/images/tofu.png' width={30}/> Bi-Weekly Online Nutrition Session</h3>
                                 <p>Bi-Weekly online nutrition session, where you get your personalized nutrition plans that are designed according to your goals.</p>
                             </content>
                             <content>
-                                <h2> <img src='/assets/images/team.png' width={30}/> Full Access to our online classes</h2>
+                                <h3> <img src='/assets/images/team.png' width={30}/> Full Access to our online classes</h3>
                                 <p>Join to our club community.</p>
                             </content>
                             
                         </div>
                         <Row>
-                            <Col md={8}>
+                            <Col lg={8} md={24}>
                                 <img src='/assets/images/step1.jpg' width={314}/>
                             </Col>
-                            <Col md={8}>
+                            <Col lg={8} md={24}>
                                 <img src='/assets/images/step2.jpg' width={314}/>
                             </Col>
-                            <Col md={8}>
+                            <Col lg={8} md={24}>
                                 <img src='/assets/images/step3.jpg' width={314}/>
                             </Col>
                         </Row>
+                        <div className='plans'>
+                        <h2 className='tab-title'>Payment Plans</h2>
+                        <Row>
+                            <Col lg={12} md={24} xs={24}>
+                                <div className='box'>
+                                    <p>1 Class</p>
+                                    <h1>1500 EGP <span>/class</span></h1>
+                                    <Link to='/order/1'>
+                                        <Button className='tsg-btn'>BOOK NOW</Button>
+                                    </Link>
+                                </div>
+                            </Col>
+                            <Col lg={12} md={24} xs={24}>
+                                <div className='box'>
+                                    <p>1 Week Package</p>
+                                    <h1>3300 EGP <span>/week</span></h1>
+                                    <Link to='/order/2'>
+                                        <Button className='tsg-btn'>BOOK NOW</Button>
+                                    </Link>
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
                     </div>
                 </TabPane>
                 <TabPane tab="Online Classes Packages" key="2">
-                    <h1 className='tab-title'>Access to all our online live classes</h1>
+                    <h2 className='tab-title'>Access to all our online live classes</h2>
                     <Row>
                         <Col md={12}>
                             <div className='tab2-wrap'>
-                                <h1>Benefits:</h1>
+                                <h3>Benefits:</h3>
                                 <content>
-                                    <h2> <img src='/assets/images/smartphone.png' width={30}/> Access to TSG App</h2>
+                                    <h3> <img src='/assets/images/smartphone.png' width={30}/> Access to TSG App</h3>
                                     <p>With unlimited number of classes for a week.</p>
                                 </content>
                                 <content>
-                                    <h2> <img src='/assets/images/team.png' width={30}/> Access to our Club Community</h2>
+                                    <h3> <img src='/assets/images/team.png' width={30}/> Access to our Club Community</h3>
                                     <p>Join to our club community.</p>
                                 </content>
                             </div>
@@ -88,23 +112,23 @@ class Home extends React.Component {
                         </Col>
                     </Row>
                     <div>
-                        <h1 className='tab-title'>Steps of attending the online GX classes</h1>
+                        <h2 className='tab-title'>Steps of attending the online GX classes</h2>
                         <Row>
-                            <Col md={8}>
+                            <Col lg={8} md={24}>
                                 <img src='/assets/images/step1.jpg' width={314}/>
                             </Col>
-                            <Col md={8}>
+                            <Col lg={8} md={24}>
                                 <img src='/assets/images/step2.jpg' width={314}/>
                             </Col>
-                            <Col md={8}>
+                            <Col lg={8} md={24}>
                                 <img src='/assets/images/step3.jpg' width={314}/>
                             </Col>
                         </Row>
                     </div>
                     <div className='plans'>
-                        <h1 className='tab-title'>Payment Plans</h1>
+                        <h2 className='tab-title'>Payment Plans</h2>
                         <Row>
-                            <Col md={12}>
+                            <Col lg={12} md={24} xs={24}>
                                 <div className='box'>
                                     <p>1 Class</p>
                                     <h1>150 EGP <span>/class</span></h1>
@@ -113,7 +137,7 @@ class Home extends React.Component {
                                     </Link>
                                 </div>
                             </Col>
-                            <Col md={12}>
+                            <Col lg={12} md={24} xs={24}>
                                 <div className='box'>
                                     <p>1 Week Package</p>
                                     <h1>800 EGP <span>/week</span></h1>
@@ -126,29 +150,63 @@ class Home extends React.Component {
                     </div>
                 </TabPane>
                 <TabPane tab="Online Programs" key="3">
-                    <h1 className='tab-title'>Nutrition Programs</h1>
+                    <h2 className='tab-title'>Nutrition Programs</h2>
                     <div>
                     <Collapse defaultActiveKey={['1']} accordion >
-                        <Collapse.Panel header="Pro Athlete Nutrition Package" key="1">
+                    <Collapse.Panel header="March To Your Goal" key="1">
                             <div className='panel-wrap'>
                                 <content>
-                                    <h2><CheckOutlined /> Purpose</h2>
+                                    <h3><CheckOutlined /> Purpose</h3>
+                                    <p>Fat loss program, you get to lose up to 4% body fat</p>
+                                </content>
+                                <content>
+                                    <h3> <img src='/assets/images/team.png' width={30}/> Weekly individually tailored Nutrition Plans</h3>
+                                    <p>Daily support and follow up with the coaches on the training.</p>
+                                </content>
+                                <content>
+                                    <h3> <ClockCircleOutlined /> Duration</h3>
+                                    <p>4 weeks</p>
+                                </content>
+                                <content>
+                                    <h3> <RetweetOutlined /> Frequency of training</h3>
+                                    <p>Live training sessions Sundays to Thursdays at 9pm</p>
+                                </content>
+                                <content>
+                                    <h3> <DollarOutlined /> Price</h3>
+                                    <p>2200 EGP</p>
+                                </content>
+                                <content>
+                                    <h3> <DollarOutlined /> Special price for TSG members </h3>
+                                    <p>1200 EGP</p>
+                                </content>
+                                
+                                <div style={{textAlign:'center'}}>
+                                    <Link to='/order/7'>
+                                        <Button className='tsg-btn'>BOOK NOW</Button>
+                                    </Link>
+                                </div>
+                            </div>
+                        </Collapse.Panel>
+                        <Collapse.Panel header="Pro Athlete Nutrition Package" key="2">
+                            <div className='panel-wrap'>
+                                <content>
+                                    <h3><CheckOutlined /> Purpose</h3>
                                     <p>To help athletes maintain their target weights that is compatible with the nature of their sports with how to manage the food intake and use proper energy fuel based on the nature of the sports</p>
                                 </content>
                                 <content>
-                                    <h2> <img src='/assets/images/team.png' width={30}/> Target</h2>
+                                    <h3> <img src='/assets/images/team.png' width={30}/> Target</h3>
                                     <p>Athletes + 16 years</p>
                                 </content>
                                 <content>
-                                    <h2> <ClockCircleOutlined /> Duration</h2>
+                                    <h3> <ClockCircleOutlined /> Duration</h3>
                                     <p>6 weeks</p>
                                 </content>
                                 <content>
-                                    <h2> <RetweetOutlined /> Frequency of follow up</h2>
+                                    <h3> <RetweetOutlined /> Frequency of follow up</h3>
                                     <p>Biweekly</p>
                                 </content>
                                 <content>
-                                    <h2> <DollarOutlined /> Price</h2>
+                                    <h3> <DollarOutlined /> Price</h3>
                                     <p>700 EGP</p>
                                 </content>
                                 <div style={{textAlign:'center'}}>
@@ -158,26 +216,26 @@ class Home extends React.Component {
                                 </div>
                             </div>
                         </Collapse.Panel>
-                        <Collapse.Panel header="Immunity Enhancing Nutrition Package" key="2">
+                        <Collapse.Panel header="Immunity Enhancing Nutrition Package" key="3">
                             <div className='panel-wrap'>
                                 <content>
-                                    <h2> <CheckOutlined /> Purpose</h2>
+                                    <h3> <CheckOutlined /> Purpose</h3>
                                     <p>To improve their immunity and fight viruses better and improve general health</p>
                                 </content>
                                 <content>
-                                    <h2> <img src='/assets/images/team.png' width={30}/> Target</h2>
+                                    <h3> <img src='/assets/images/team.png' width={30}/> Target</h3>
                                     <p>Above 40 and Under 18</p>
                                 </content>
                                 <content>
-                                    <h2> <ClockCircleOutlined /> width={30}/> Duration</h2>
+                                    <h3> <ClockCircleOutlined /> Duration</h3>
                                     <p>4 weeks</p>
                                 </content>
                                 <content>
-                                    <h2> <RetweetOutlined /> Frequency of follow up</h2>
+                                    <h3> <RetweetOutlined /> Frequency of follow up</h3>
                                     <p>Weekly Plans</p>
                                 </content>
                                 <content>
-                                    <h2> <DollarOutlined /> Price</h2>
+                                    <h3> <DollarOutlined /> Price</h3>
                                     <p>600 EGP</p>
                                 </content>
                                 <div style={{textAlign:'center'}}> 
@@ -189,19 +247,19 @@ class Home extends React.Component {
                         </Collapse.Panel>
                     </Collapse>
                     </div>
-                    <h1 className='tab-title'>March To Your Goal</h1>
+                    {/* <h2 className='tab-title'>March To Your Goal</h2>
                     <h2>2nd Ramadan Edition</h2>
-                    <h1 style={{color:'#c41230'}}>COMING SOON!</h1>
+                    <h2 style={{color:'#c41230'}}>COMING SOON!</h2> */}
                 </TabPane>
                 <TabPane tab="Events" key="4">
                     <div style={{margin: '30px 0'}}>
-                        <h1 style={{color:'#c41230'}}>COMING SOON!</h1>
+                        <h2 style={{color:'#c41230'}}>COMING SOON!</h2>
 
                     </div>
                 </TabPane>
             </Tabs>
         </div>
-        
+    </div>
     </div>
   }
 }

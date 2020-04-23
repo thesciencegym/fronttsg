@@ -3,6 +3,7 @@ import Home from './components/Home';
 import { Router, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import './App.scss'
+import './Typography.scss'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Order from './components/Order';
@@ -16,7 +17,7 @@ function App() {
         <Header/>
           <Route exact path="/" component={Home} />
           <Route exact path="/order/:id" component={Order} />
-          <Route exact path="/done/:status" component={OrderResult} />
+          <Route exact path="/thank-you" component={OrderResult} />
         <Footer/>
       </div>
     </Router>

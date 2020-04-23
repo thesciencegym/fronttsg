@@ -1,17 +1,36 @@
 @import '~antd/dist/antd.css';
- $main-color: #c41230;
+$main-color: #c41230;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
 
+// GLOBAL
 body{
   padding: 0;
   background-color: #f8f8f8;
 }
- .vertical-horizontal-center{
+.container {
+  width: 75vw;
+  max-width: 1441px;
+  margin: auto;
+  padding: 15px 0;
+}
+
+@media (max-width: $screen-sm) {
+  .container {
+    padding: 20px 0 !important;
+  }  
+}
+
+.vertical-horizontal-center{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
+
+/////
 .header{
   background: url("/assets/images/header.jpg") no-repeat center;
     height: 330px;
@@ -23,12 +42,12 @@ body{
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
         h1{
           color:#fff;
-          font-size: 48px;
         }
         .logo{
           position: absolute;
           top: 40px;
-          left: 40px;
+          left: 150px;
+
         }
     }
 }
@@ -39,6 +58,11 @@ body{
   background-color: #121212;
   color:#fff;
   margin: 0;
+  @media (max-width: $screen-md) {
+    img.logo  {
+        width: 200px !important
+    }
+  }
   .ant-row{
     padding: 50px ;
 
@@ -51,17 +75,60 @@ body{
     text-align: center;
     padding: 20px 0;
 
-    h3{
+    h4{
       color: #fff;
       margin-bottom: 0;
     }
   }
+  .social{
+    margin-bottom: 20px;
+    .anticon{
+      color: #fff;
+      font-size: 18px;
+      background-color: $main-color;
+      margin-right: 5px;
+      padding: 6px;
+      border-radius: 48px;
+    }
+  } 
+  .contact{
+    content{
+      margin-bottom: 15px;
+      display: block;
+      .anticon{
+        color: $main-color;
+        font-size: 18px;
+        margin-right: 15px;
+      }
+    }
+  } 
+
 } 
 
 .ant-btn-primary {
   background-color: $main-color;
   border-color: $main-color;
 
+}
+button.tsg-btn{
+  border: 2px solid $main-color;
+  border-radius: 65px;
+  color: #333333;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 24px;
+  padding: 12px ;
+  width: 150px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+button.tsg-btn:hover, button.tsg-btn:focus {
+  color: #fff;
+  background-color: $main-color;
+  border-color: $main-color;
 }
 
 // .red-line{
