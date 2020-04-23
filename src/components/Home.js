@@ -173,7 +173,7 @@ class Home extends React.Component {
                                 </content>
                                 <content>
                                     <h3> <DollarOutlined /> Price</h3>
-                                    <p>2200 EGP</p>
+                                    <p>2400 EGP</p>
                                 </content>
                                 <content>
                                     <h3> <DollarOutlined /> Special price for TSG members </h3>
