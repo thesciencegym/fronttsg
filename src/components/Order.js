@@ -15,38 +15,38 @@ class Order extends React.Component {
             <form className="tsg-form" name="addProduct"action="https://science-gym-backend-prod.herokuapp.com/order"   method="post">
                 <div className="_row _name">
                     <div className="_form-group">
-                        <label >First Name</label>
-                        <input required placeholder="enter your first name" type="text" name="first_name"/>
+                        <label>First Name</label>
+                        <input required placeholder="First name" type="text" name="first_name"/>
                     </div>
                     <div className="_form-group">
-                        <label >Last Name</label>
-                        <input required placeholder="enter your last name" type="text" name="last_name"/>
-                    </div>
-                </div>
-                <div className="_row ">
-                    <div className="_form-group">
-                        <label >Email</label>
-                        <input required placeholder="enter your email" type="email" name="email"/>
-                    </div>
-                    <div className="_form-group">
-                        <label >Phone</label>
-                        <input required placeholder="enter your phone number" type="tel" name="phone_number"/>
+                        <label>Last Name</label>
+                        <input required placeholder="Last name" type="text" name="last_name"/>
                     </div>
                 </div>
                 <div className="_row ">
                     <div className="_form-group">
-                        <label >City</label>
-                        <input required placeholder="enter your city" type="text" name="phone_number"/>
+                        <label>Email</label>
+                        <input required placeholder="Email" type="email" name="email"/>
+                    </div>
+                    <div className="_form-group">
+                        <label>Phone</label>
+                        <input required placeholder="Phone number" type="tel" name="phone_number"/>
+                    </div>
+                </div>
+                <div className="_row ">
+                    <div className="_form-group">
+                        <label>City</label>
+                        <input required placeholder="City" type="text" name="city"/>
                     </div>
                     <div className="_form-group">
                         <label >Gender</label>
                         <div className="_gender">
                             <div style={{marginRight: 30}}>
-                                <input required type="radio" id="male" name="gender" value="male"/>
+                                <input required type="radio" id="male" name="gender" value="m"/>
                                 <label htmlFor="male">  Male</label>
                             </div>
                             <div>
-                                <input required type="radio" id="female" name="gender" value="female"/>
+                                <input required type="radio" id="female" name="gender" value="f"/>
                                 <label htmlFor="female">  Female</label>
                             </div>
                         </div>          
