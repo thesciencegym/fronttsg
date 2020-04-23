@@ -16,7 +16,7 @@ function App() {
         <Header/>
           <Route exact path="/" component={Home} />
           <Route exact path="/order/:id" component={Order} />
-          <Route exact path="/done" component={OrderResult} />
+          <Route exact path="/done/:status" component={OrderResult} />
         <Footer/>
       </div>
     </Router>

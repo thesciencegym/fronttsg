@@ -7,11 +7,12 @@ class Order extends React.Component {
     state={
         showAgreeModal: false
     }
+
   render() {
-      console.log('tttt',this.props.match.params.id)
+    let productId = this.props.match.params.id
     return <div className='order'>
             <h1 className='title' >Join Us Now!</h1>
-            <form className="tsg-form" name="addProduct" action="https://science-gym-backend.herokuapp.com/order" method="post">
+            <form className="tsg-form" name="addProduct"action="https://science-gym-backend.herokuapp.com/order"  method="post">
                 <div className="_row _name">
                     <div className="_form-group">
                         <label >First Name</label>
@@ -52,14 +53,14 @@ class Order extends React.Component {
                     </div>
                     
                 </div>
-                <div className="_row ">
+                {/* <div className="_row ">
                     <div className=" agree">
                         <input required type="checkbox" id="agree" name="agree" value="agree"/>
                         <label for="agree"> <p onClick={()=>this.setState({showAgreeModal: true})}> I agree to the terms and conditions </p> </label>                           
                     </div>
-                </div>
+                </div> */}
 ​
-                <input hidden id="tsg_product_id" name="tsg_product_id"/>
+                <input hidden id="tsg_product_id" name="tsg_product_id" value={productId}/>
                 <div className="_submit-btn">
                     <button type="submit" >Proceed</button>
                 </div>

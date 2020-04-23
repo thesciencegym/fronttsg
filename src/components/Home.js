@@ -12,7 +12,7 @@ class Home extends React.Component {
   render() {
     return <div className='home'>
         <div className='intro'>
-            <h1>Stay Healthy, Happy and Active!</h1>
+            <h1 className='red-line'>Stay Healthy, Happy and Active!</h1>
             <h3 style={{color:'#666666'}}>Look out for new programs, live virtual classes, live webinars with tips and tricks across our social media platforms.</h3>
         </div>
         
@@ -20,7 +20,7 @@ class Home extends React.Component {
             <Tabs defaultActiveKey="1" >
                 <TabPane tab="Science@Home" key="1">
                     <div>
-                        <h1 className='tab-title'>How Science@Home Works?</h1>
+                        <h1 className='tab-title red-line'>How Science@Home Works?</h1>
                         <div className='tab1-wrap'>
                             <content>
                                 

@@ -5,7 +5,7 @@ import React from 'react'
 
 class OrderResult extends React.Component {
   render() {
-      let success = false
+    let success = this.props.match.params.status == 'success'
     return <div className='order-result'>   
         {success == true ? <div className='success'>
             <CheckOutlined />
