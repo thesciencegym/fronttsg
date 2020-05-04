@@ -5,12 +5,15 @@ import { Tabs, Row, Col, Button, Collapse } from 'antd'
 
 import './home.scss'
 import { Link } from 'react-router-dom';
+import Header from './Header';
 
 const { TabPane } = Tabs;
 
 class Home extends React.Component {
   render() {
-    return <div className='home'>
+    return <div>
+        <Header title='Our Online Store'/>
+        <div className='home'>
         <div className='container'>
         <div className='intro'>
             <h2 className='red-line'>Stay Healthy, Happy and Active!</h2>
@@ -360,7 +363,7 @@ class Home extends React.Component {
             </Tabs>
         </div>
     </div>
-    </div>
+    </div></div>
   }
 }
 export default Home

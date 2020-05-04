@@ -15,7 +15,6 @@ function App() {
   return (
     <Router history={history}>
       <div>
-        <Header/>
           <Route exact path="/" component={Home} />
           <Route exact path="/order/:id" component={Order} />
           <Route exact path="/thank-you" component={OrderResult} />

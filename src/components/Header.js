@@ -10,7 +10,7 @@ class Header extends React.Component {
                   <img src='/assets/images/logo.png' width={260}/>
               </div>
             </Link>      
-            <h1>Our Online Store</h1>
+            <h1>{this.props.title}</h1>
         </div>
     </div>
   }

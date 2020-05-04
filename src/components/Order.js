@@ -3,6 +3,7 @@ import './order.scss';
 import { Modal, Form, Input, Button, Radio } from 'antd';
 import _map from 'lodash/map'
 import validator from 'validator'
+import Header from './Header';
 
 class Order extends React.Component {
 
@@ -73,7 +74,9 @@ class Order extends React.Component {
             return;
         }
     })
-    return <div className='order'>
+    return <div>
+            <Header title='Our Online Store'/>
+            <div className='order'>
             <h2 className='title' >Join Us Now!</h2>
             <Form className="">
                 <div className="tsg-form">
@@ -174,7 +177,7 @@ class Order extends React.Component {
                     </ul>
                 </div>
             </Modal>
-    </div>
+    </div></div>
   }
 }
 
