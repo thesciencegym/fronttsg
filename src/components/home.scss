@@ -53,6 +53,7 @@ content{
     font-size: 20px;
 }
 .plans{
+   
     .box{
         background-color: #fff;
         width: 65%;
@@ -62,6 +63,7 @@ content{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         margin-bottom: 10px;
         p{
             color: #333333;
@@ -81,6 +83,15 @@ content{
             }
         }
         
+    }
+    &.prices{
+        .box{
+            background-color: #f8f8f8;
+            width: 90%;
+        }
+        p{
+            margin-left: 0;
+        }
     }
 }
 

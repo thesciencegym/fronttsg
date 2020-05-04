@@ -150,7 +150,6 @@ class Home extends React.Component {
                     </div>
                 </TabPane>
                 <TabPane tab="Online Programs" key="3">
-                    <h2 className='tab-title'>Nutrition Programs</h2>
                     <div>
                     <Collapse defaultActiveKey={['1']} accordion >
                     <Collapse.Panel header="March To Your Goal (Ramadan Edition)" key="1">
@@ -245,11 +244,112 @@ class Home extends React.Component {
                                 </div>
                             </div>
                         </Collapse.Panel>
+                        <Collapse.Panel header="Online Superheroes program" key="4">
+                            <div className='panel-wrap'>
+                                <content>
+                                    <h3> <CheckOutlined /> Purpose</h3>
+                                    <p>Is to help clients who can’t train on their own to do the workout while being monitored from our certified coaches through live one to one training sessions.</p>
+                                </content>
+                                <content>
+                                    <h3> <img src='/assets/images/team.png' width={30}/> Target</h3>
+                                    <p>Age group above 60</p>
+                                    <p>Adults with injuries</p>
+                                </content>
+                                <content>
+                                    <h3> <ClockCircleOutlined /> Duration</h3>
+                                    <p>12 sessions</p>
+                                    <p>24 sessions</p>
+                                    <p>48 sessions</p>
+                                </content>
+                                <content>
+                                    <h3> <DollarOutlined /> Price</h3>
+                                    <div className='plans prices'>
+                                        <Row>
+                                            <Col lg={8} md={24} xs={24}>
+                                                <div className='box'>
+                                                    <p>12 sessions</p>
+                                                    <h1>2400 EGP</h1>
+                                                    <Link to='/order/8'>
+                                                        <Button className='tsg-btn'>BOOK NOW</Button>
+                                                    </Link>
+                                                </div>
+                                            </Col>
+                                            <Col lg={8} md={24} xs={24}>
+                                                <div className='box'>
+                                                    <p>24 sessions</p>
+                                                    <h1>3750 EGP</h1>
+                                                    <Link to='/order/9'>
+                                                        <Button className='tsg-btn'>BOOK NOW</Button>
+                                                    </Link>
+                                                </div>
+                                            </Col>
+                                            <Col lg={8} md={24} xs={24}>
+                                                <div className='box'>
+                                                    <p>48 sessions</p>
+                                                    <h1>6200 EGP</h1>
+                                                    <Link to='/order/10'>
+                                                        <Button className='tsg-btn'>BOOK NOW</Button>
+                                                    </Link>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                    </div>
+
+                                </content>
+                            </div>
+                        </Collapse.Panel>
+                        <Collapse.Panel header="Online Rehabilitation program" key="5">
+                            <div className='panel-wrap'>
+                                <content>
+                                    <h3> <CheckOutlined /> Purpose</h3>
+                                    <p>help patients with musculoskeletal problems restore normal movement and functional abilities through an online rehab program that will be designed after assessment of the case.</p>
+                                </content>
+                                <content>
+                                    <h3> <img src='/assets/images/team.png' width={30}/> Target</h3>
+                                    <p>patients with following problems:</p>
+                                    <ul>
+                                        <li>Back problems</li>
+                                        <li>Neck problems</li>
+                                        <li>Knee problems</li>
+                                        <li>Ankle problems</li>
+                                    </ul>
+                                </content>
+                                <content>
+                                    <h3> <ClockCircleOutlined /> Duration</h3>
+                                    <p>1 month</p>
+                                    <p>3 months</p>
+                                </content>
+                                <content>
+                                    <h3> <DollarOutlined /> Price</h3>
+                                    <div className='plans prices'>
+                                        <Row>
+                                            <Col lg={12} md={24} xs={24}>
+                                                <div className='box'>
+                                                    <p>1 month</p>
+                                                    <h1>1500 EGP</h1>
+                                                    <Link to='/order/11'>
+                                                        <Button className='tsg-btn'>BOOK NOW</Button>
+                                                    </Link>
+                                                </div>
+                                            </Col>
+                                            <Col lg={12} md={24} xs={24}>
+                                                <div className='box'>
+                                                    <p>3 months</p>
+                                                    <h1>3500 EGP</h1>
+                                                    <Link to='/order/12'>
+                                                        <Button className='tsg-btn'>BOOK NOW</Button>
+                                                    </Link>
+                                                </div>
+                                            </Col>
+                                        </Row>
+                                    </div>
+
+                                </content>
+                            </div>
+                        </Collapse.Panel>
                     </Collapse>
                     </div>
-                    {/* <h2 className='tab-title'>March To Your Goal</h2>
-                    <h2>2nd Ramadan Edition</h2>
-                    <h2 style={{color:'#c41230'}}>COMING SOON!</h2> */}
+
                 </TabPane>
                 <TabPane tab="Events" key="4">
                     <div style={{margin: '30px 0'}}>

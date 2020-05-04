@@ -37,6 +37,10 @@ label{
     margin: auto;
     background-color: #f3f3f3;
     padding: 50px;
+    .ant-form-item-control-input-content{
+        display: flex;
+        flex-direction: column;
+    }
 }
 ._row{
     display: flex;
@@ -58,11 +62,11 @@ label{
    text-align: right;
 }
 ._submit-btn button{
-padding: 13px;
-background-color: $main-color;
-border: none;
-width: 100px;
-color: #fff;
+    height: 50px;
+    background-color: $main-color;
+    border: none;
+    width: auto;
+    color: #fff;
 cursor: pointer;
 }
 
@@ -106,3 +110,13 @@ input:focus{
         }
     }
 }
+@media (max-width: $screen-sm) {
+    .order-result{
+        width: 100%;
+    }
+  }
+
+  button[disabled]{
+      background-color: #ccc;
+      cursor: not-allowed;
+  }

@@ -1,70 +1,164 @@
 import React from 'react'
 import './order.scss';
-import { Modal } from 'antd';
+import { Modal, Form, Input, Button, Radio } from 'antd';
+import _map from 'lodash/map'
+import validator from 'validator'
 
 class Order extends React.Component {
 
     state={
         showAgreeModal: false,
+        agree: false,
+        disable: true,
+        loading: false,
+        emailHelp:'',
+        order : {first_name: {value:'', validation: undefined},
+                last_name: {value:'', validation: undefined},
+                email: {value:'', validation: undefined},
+                phone_number: {value:'', validation: undefined},
+                city: {value:'', validation: undefined}, 
+                gender: {value:'', validation: undefined}
+        }
+        
+    }
+
+    handleSubmit = (e) => {
+        
+        e.preventDefault()
+        this.setState({loading: true})
+        let order ={ product_code: this.props.match.params.id}
+        _map(this.state.order, (val,item)=> order[item] = val['value'] )
+        fetch('https://science-gym-backend.herokuapp.com/order',{
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify( order)
+        }
+        )
+        .then(res=>{
+            window.location.replace(res.url)
+        })
+        .finally(()=> this.setState({loading: false}))
+
+    }
+    handleChangeInput = (e, field) => {        
+        let order = {...this.state.order}
+        order[field].value = e.target.value
+        if( field == 'email'){
+            if( validator.isEmail( e.target.value ) ) {
+                order[field].validation = 'success'
+                this.setState({emailHelp: ''})
+            }
+            else{
+                order[field].validation = 'error'
+                this.setState({emailHelp: 'not a valid email'})
+            }
+        }
+        else if( e.target.value.length > 1 || field == 'gender' ) {
+            order[field].validation = 'success'
+        } else {
+            order[field].validation = undefined
+        }
+        this.setState({order},()=> console.log('vvvv', this.state))
+
     }
 
   render() {
-    let productId = this.props.match.params.id
+    const { order } = this.state
+    let disabled = !this.state.agree 
+    !disabled && _map(this.state.order, (val,item) =>{
+        if ( val.validation == undefined || val.validation == 'error' ){
+            disabled = true
+            return;
+        }
+    })
     return <div className='order'>
             <h2 className='title' >Join Us Now!</h2>
-            <form className="tsg-form" name="addProduct"action="https://science-gym-backend-prod.herokuapp.com/order"   method="post">
-                <div className="_row _name">
-                    <div className="_form-group">
-                        <label>First Name</label>
-                        <input required placeholder="First name" type="text" name="first_name"/>
+            <Form className="">
+                <div className="tsg-form">
+                    <div className="_row _name">
+                        <div className="_form-group">
+                            <Form.Item
+                                validateStatus={order.first_name.validation}
+                            >
+                                <label>First Name</label>
+                                <input  placeholder="First name" type="text" onChange={(e)=>this.handleChangeInput(e,'first_name')}/>  
+                            </Form.Item>
+                        
+                        </div>
+                        <div className="_form-group">
+                            <Form.Item
+                                validateStatus={order.last_name.validation}
+                                
+                            >
+                            <label>Last Name</label>
+                                <input  placeholder="Last name" type="text" onChange={(e)=>this.handleChangeInput(e,'last_name')}/>
+                            </Form.Item>           
+                        </div>
                     </div>
-                    <div className="_form-group">
-                        <label>Last Name</label>
-                        <input required placeholder="Last name" type="text" name="last_name"/>
+                    <div className="_row ">
+                        <div className="_form-group">
+                            <Form.Item
+                                validateStatus={order.email.validation}
+                                help={this.state.emailHelp}
+                            >
+                                <label>Email</label>
+                                <input  placeholder="Email" type="email" onChange={(e)=>this.handleChangeInput(e,'email')}/>
+                            </Form.Item>
+                        
+                        </div>
+                        <div className="_form-group">
+                            <Form.Item
+                                validateStatus={order.phone_number.validation}
+                            >
+                                <label>Phone</label>
+                                <input  placeholder="Phone number" type="tel" onChange={(e)=>this.handleChangeInput(e,'phone_number')}/>
+                            </Form.Item>           
+                        </div>
                     </div>
-                </div>
-                <div className="_row ">
-                    <div className="_form-group">
-                        <label>Email</label>
-                        <input required placeholder="Email" type="email" name="email"/>
+                    <div className="_row ">
+                        <div className="_form-group">
+                            <Form.Item
+                                validateStatus={order.city.validation}
+                            >
+                                <label>City</label>
+                                <input  placeholder="City" type="text" onChange={(e)=>this.handleChangeInput(e,'city')}/>
+                            </Form.Item>
+                        
+                        </div>
+                        <div className="_form-group">
+                            <Form.Item
+                                validateStatus={order.phone_number.validation}
+                            >
+                                <label >Gender</label>
+                                <div className="_gender">
+                                <Radio.Group onChange={(e)=>this.handleChangeInput(e,'gender')} >
+                                    <Radio value={'m'}>Male</Radio>
+                                    <Radio value={'f'}>Female</Radio>
+                                </Radio.Group>
+                                </div>
+                            </Form.Item>           
+                        </div>
                     </div>
-                    <div className="_form-group">
-                        <label>Phone</label>
-                        <input required placeholder="Phone number" type="tel" name="phone_number"/>
+                    <div className="_row ">
+                        <div className=" agree">
+                            <input  type="checkbox" id="agree" onChange={()=>this.setState({agree: true})} />
+                            <label htmlFor="agree"> <p onClick={()=>this.setState({showAgreeModal: true})}> I agree to the terms and conditions </p> </label>                           
+                        </div>
                     </div>
-                </div>
-                <div className="_row ">
-                    <div className="_form-group">
-                        <label>City</label>
-                        <input required placeholder="City" type="text" name="city"/>
+                    <div className="_submit-btn">
+                        <Button block type="submit" size="large" 
+                        onClick={(e)=>this.handleSubmit(e)}
+                        loading={this.state.loading}
+                        disabled={disabled}
+                        >
+                            Proceed
+                        </Button>
                     </div>
-                    <div className="_form-group">
-                        <label >Gender</label>
-                        <div className="_gender">
-                            <div style={{marginRight: 30}}>
-                                <input required type="radio" id="male" name="gender" value="m"/>
-                                <label htmlFor="male">  Male</label>
-                            </div>
-                            <div>
-                                <input required type="radio" id="female" name="gender" value="f"/>
-                                <label htmlFor="female">  Female</label>
-                            </div>
-                        </div>          
-                    </div>
-                    
-                </div>
-                <div className="_row ">
-                    <div className=" agree">
-                        <input required type="checkbox" id="agree" name="agree" />
-                        <label for="agree"> <p onClick={()=>this.setState({showAgreeModal: true})}> I agree to the terms and conditions </p> </label>                           
-                    </div>
-                </div>
-​
-                <input hidden id="product_code" name="product_code" value={productId}/>
-                <div className="_submit-btn">
-                    <button  type="submit" >Proceed</button>
-                </div>
-            </form>
+                   
+                </div>             
+            </Form>
             <Modal 
                 visible={this.state.showAgreeModal}
                 onCancel={()=> this.setState({showAgreeModal: false})}
@@ -83,6 +177,5 @@ class Order extends React.Component {
     </div>
   }
 }
-
 
 export default Order
