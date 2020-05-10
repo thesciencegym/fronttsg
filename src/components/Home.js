@@ -6,6 +6,7 @@ import { Tabs, Row, Col, Button, Collapse } from 'antd'
 import './home.scss'
 import { Link } from 'react-router-dom';
 import Header from './Header';
+import MyZone from './MyZone';
 
 const { TabPane } = Tabs;
 
@@ -360,6 +361,9 @@ class Home extends React.Component {
 
                     </div>
                 </TabPane>
+                {/* <TabPane tab="Products" key="5">
+                    <MyZone/>
+                </TabPane> */}
             </Tabs>
         </div>
     </div>

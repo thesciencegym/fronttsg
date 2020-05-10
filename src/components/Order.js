@@ -5,6 +5,10 @@ import _map from 'lodash/map'
 import validator from 'validator'
 import Header from './Header';
 
+// const ORDER_URL = 'https://science-gym-backend.herokuapp.com/order'; // Test backend
+const ORDER_URL = 'https://science-gym-backend-prod.herokuapp.com/order'; // Production backend
+
+
 class Order extends React.Component {
 
     state={
@@ -29,7 +33,7 @@ class Order extends React.Component {
         this.setState({loading: true})
         let order ={ product_code: this.props.match.params.id}
         _map(this.state.order, (val,item)=> order[item] = val['value'] )
-        fetch('https://science-gym-backend.herokuapp.com/order',{
+        fetch(ORDER_URL,{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'
