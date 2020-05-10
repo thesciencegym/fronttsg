@@ -150,7 +150,7 @@ class Order extends React.Component {
                     </div>
                     <div className="_row ">
                         <div className=" agree">
-                            <input  type="checkbox" id="agree" onChange={()=>this.setState({agree: true})} />
+                            <input  type="checkbox" id="agree" onChange={()=>this.setState({agree: !this.state.agree})} />
                             <label htmlFor="agree"> <p onClick={()=>this.setState({showAgreeModal: true})}> I agree to the terms and conditions </p> </label>                           
                         </div>
                     </div>
