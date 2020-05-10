@@ -65,7 +65,7 @@ class Order extends React.Component {
         } else {
             order[field].validation = undefined
         }
-        this.setState({order},()=> console.log('vvvv', this.state))
+        this.setState({order})
 
     }
 
