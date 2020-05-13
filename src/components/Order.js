@@ -22,6 +22,7 @@ class Order extends React.Component {
                 email: {value:'', validation: undefined},
                 phone_number: {value:'', validation: undefined},
                 city: {value:'', validation: undefined}, 
+                country: {value:'', validation: undefined}, 
                 gender: {value:'', validation: undefined}
         }
         
@@ -134,7 +135,20 @@ class Order extends React.Component {
                             </Form.Item>
                         
                         </div>
+
                         <div className="_form-group">
+                            <Form.Item
+                                validateStatus={order.country.validation}
+                            >
+                                <label>Country</label>
+                                <input  placeholder="Country" type="text" onChange={(e)=>this.handleChangeInput(e,'country')}/>
+                            </Form.Item>
+                        
+                        </div>
+
+                    </div>
+                    <div className="_row ">
+                    <div className="_form-group">
                             <Form.Item
                                 validateStatus={order.phone_number.validation}
                             >
@@ -147,11 +161,12 @@ class Order extends React.Component {
                                 </div>
                             </Form.Item>           
                         </div>
-                    </div>
-                    <div className="_row ">
-                        <div className=" agree">
-                            <input  type="checkbox" id="agree" onChange={()=>this.setState({agree: !this.state.agree})} />
-                            <label htmlFor="agree"> <p onClick={()=>this.setState({showAgreeModal: true})}> I agree to the terms and conditions </p> </label>                           
+
+                        <div className="_form-group">
+                            <div className="agree">
+                                <input  type="checkbox" id="agree" onChange={()=>this.setState({agree: !this.state.agree})} />
+                                <label htmlFor="agree"> <p onClick={()=>this.setState({showAgreeModal: true})}> I agree to the terms and conditions </p> </label>                           
+                            </div>
                         </div>
                     </div>
                     <div className="_submit-btn">
@@ -160,7 +175,7 @@ class Order extends React.Component {
                         loading={this.state.loading}
                         disabled={disabled}
                         >
-                            Proceed
+                            Proceed to payment
                         </Button>
                     </div>
                    
