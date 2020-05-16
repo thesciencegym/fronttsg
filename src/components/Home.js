@@ -6,6 +6,7 @@ import { Tabs, Row, Col, Button, Collapse } from 'antd'
 import './home.scss'
 import { Link } from 'react-router-dom';
 import Header from './Header';
+import MyZone from './MyZone';
 
 const { TabPane } = Tabs;
 
@@ -155,41 +156,7 @@ class Home extends React.Component {
                 <TabPane tab="Online Programs" key="3">
                     <div>
                     <Collapse defaultActiveKey={['1']} accordion >
-                    <Collapse.Panel header="March To Your Goal (Ramadan Edition)" key="1">
-                            <div className='panel-wrap'>
-                                <content>
-                                    <h3><CheckOutlined /> Purpose</h3>
-                                    <p>Fat loss program, you get to lose up to 4% body fat</p>
-                                </content>
-                                <content>
-                                    <h3> <img src='/assets/images/team.png' width={30}/> Weekly individually tailored Nutrition Plans</h3>
-                                    <p>Daily support and follow up with the coaches on the training.</p>
-                                </content>
-                                <content>
-                                    <h3> <ClockCircleOutlined /> Duration</h3>
-                                    <p>4 weeks</p>
-                                </content>
-                                <content>
-                                    <h3> <RetweetOutlined /> Frequency of training</h3>
-                                    <p>Live training sessions Sundays to Thursdays at 9pm</p>
-                                </content>
-                                <content>
-                                    <h3> <DollarOutlined /> Price</h3>
-                                    <p>2400 EGP</p>
-                                </content>
-                                <content>
-                                    <h3> <DollarOutlined /> Special price for TSG members </h3>
-                                    <p>1200 EGP</p>
-                                </content>
-                                
-                                <div style={{textAlign:'center'}}>
-                                    <Link to='/order/7'>
-                                        <Button className='tsg-btn'>BOOK NOW</Button>
-                                    </Link>
-                                </div>
-                            </div>
-                        </Collapse.Panel>
-                        <Collapse.Panel header="Pro Athlete Nutrition Package" key="2">
+                        <Collapse.Panel header="Pro Athlete Nutrition Program" key="1">
                             <div className='panel-wrap'>
                                 <content>
                                     <h3><CheckOutlined /> Purpose</h3>
@@ -218,7 +185,7 @@ class Home extends React.Component {
                                 </div>
                             </div>
                         </Collapse.Panel>
-                        <Collapse.Panel header="Immunity Enhancing Nutrition Package" key="3">
+                        <Collapse.Panel header="Immunity Enhancing Nutrition Program" key="2">
                             <div className='panel-wrap'>
                                 <content>
                                     <h3> <CheckOutlined /> Purpose</h3>
@@ -247,7 +214,7 @@ class Home extends React.Component {
                                 </div>
                             </div>
                         </Collapse.Panel>
-                        <Collapse.Panel header="Online Superheroes program" key="4">
+                        <Collapse.Panel header="Online Superheroes Program" key="3">
                             <div className='panel-wrap'>
                                 <content>
                                     <h3> <CheckOutlined /> Purpose</h3>
@@ -301,7 +268,7 @@ class Home extends React.Component {
                                 </content>
                             </div>
                         </Collapse.Panel>
-                        <Collapse.Panel header="Online Rehabilitation program" key="5">
+                        <Collapse.Panel header="Online Rehabilitation Program" key="4">
                             <div className='panel-wrap'>
                                 <content>
                                     <h3> <CheckOutlined /> Purpose</h3>
@@ -360,6 +327,9 @@ class Home extends React.Component {
 
                     </div>
                 </TabPane>
+                {/* <TabPane tab="Products" key="5">
+                    <MyZone/>
+                </TabPane> */}
             </Tabs>
         </div>
     </div>

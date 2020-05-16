@@ -6,6 +6,10 @@ import validator from 'validator'
 import Header from './Header';
 import { PRODUCTS } from '../PRODUCTS';
 
+// const ORDER_URL = 'https://science-gym-backend.herokuapp.com/order'; // Test backend
+const ORDER_URL = 'https://science-gym-backend-prod.herokuapp.com/order'; // Production backend
+
+
 class Order extends React.Component {
     productId = this.props.match.params.id
     state={
@@ -19,6 +23,7 @@ class Order extends React.Component {
                 email: {value:'', validation: undefined},
                 phone_number: {value:'', validation: undefined},
                 city: {value:'', validation: undefined}, 
+                country: {value:'', validation: undefined}, 
                 gender: {value:'', validation: undefined}
         }
         
@@ -30,7 +35,7 @@ class Order extends React.Component {
         this.setState({loading: true})
         let order ={ product_code: this.productId}
         _map(this.state.order, (val,item)=> order[item] = val['value'] )
-        fetch('https://science-gym-backend.herokuapp.com/order',{
+        fetch(ORDER_URL,{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,7 +67,7 @@ class Order extends React.Component {
         } else {
             order[field].validation = undefined
         }
-        this.setState({order},()=> console.log('vvvv', this.state))
+        this.setState({order})
 
     }
 
@@ -144,7 +149,20 @@ class Order extends React.Component {
                             </Form.Item>
                         
                         </div>
+
                         <div className="_form-group">
+                            <Form.Item
+                                validateStatus={order.country.validation}
+                            >
+                                <label>Country</label>
+                                <input  placeholder="Country" type="text" onChange={(e)=>this.handleChangeInput(e,'country')}/>
+                            </Form.Item>
+                        
+                        </div>
+
+                    </div>
+                    <div className="_row ">
+                    <div className="_form-group">
                             <Form.Item
                                 validateStatus={order.phone_number.validation}
                             >
@@ -157,11 +175,12 @@ class Order extends React.Component {
                                 </div>
                             </Form.Item>           
                         </div>
-                    </div>
-                    <div className="_row ">
-                        <div className=" agree">
-                            <input  type="checkbox" id="agree" onChange={()=>this.setState({agree: true})} />
-                            <label htmlFor="agree"> <p onClick={()=>this.setState({showAgreeModal: true})}> I agree to the terms and conditions </p> </label>                           
+
+                        <div className="_form-group">
+                            <div className="agree">
+                                <input  type="checkbox" id="agree" onChange={()=>this.setState({agree: !this.state.agree})} />
+                                <label htmlFor="agree"> <p onClick={()=>this.setState({showAgreeModal: true})}> I agree to the terms and conditions </p> </label>                           
+                            </div>
                         </div>
                     </div>
                     <div className="_submit-btn">
@@ -170,7 +189,7 @@ class Order extends React.Component {
                         loading={this.state.loading}
                         disabled={disabled}
                         >
-                            Proceed
+                            Proceed to payment
                         </Button>
                     </div>
                    
