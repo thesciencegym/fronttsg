@@ -1,12 +1,13 @@
 import React from 'react'
 import './order.scss';
-import { Modal, Form, Input, Button, Radio } from 'antd';
+import { Modal, Form, Input, Button, Radio, Row, Col } from 'antd';
 import _map from 'lodash/map'
 import validator from 'validator'
 import Header from './Header';
+import { PRODUCTS } from '../PRODUCTS';
 
 class Order extends React.Component {
-
+    productId = this.props.match.params.id
     state={
         showAgreeModal: false,
         agree: false,
@@ -27,7 +28,7 @@ class Order extends React.Component {
         
         e.preventDefault()
         this.setState({loading: true})
-        let order ={ product_code: this.props.match.params.id}
+        let order ={ product_code: this.productId}
         _map(this.state.order, (val,item)=> order[item] = val['value'] )
         fetch('https://science-gym-backend.herokuapp.com/order',{
             method:'POST',
@@ -74,10 +75,23 @@ class Order extends React.Component {
             return;
         }
     })
+    const current_project = PRODUCTS.find(p => p.id == this.productId)
     return <div>
             <Header title='Our Online Store'/>
             <div className='order'>
-            <h2 className='title' >Join Us Now!</h2>
+            {/* <h2 className='title' >Join Us Now!</h2> */}
+            <div className='product-card vertical-horizontal-center' >
+                <Row>
+                    <Col md={10}>
+                        <img width={'100%'} src='/assets/images/logo.png'/>
+                    </Col>
+                    <Col md={14} className='vertical-horizontal-center'>
+                       <h2>{current_project.name}</h2> 
+                    </Col>
+                </Row>
+                
+
+            </div>
             <Form className="">
                 <div className="tsg-form">
                     <div className="_row _name">
