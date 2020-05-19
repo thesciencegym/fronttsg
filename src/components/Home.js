@@ -327,9 +327,9 @@ class Home extends React.Component {
 
                     </div>
                 </TabPane>
-                {/* <TabPane tab="Products" key="5">
+                <TabPane tab="Products" key="5">
                     <MyZone/>
-                </TabPane> */}
+                </TabPane>
             </Tabs>
         </div>
     </div>

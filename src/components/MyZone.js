@@ -11,6 +11,7 @@ class MyZone extends React.Component {
           <h3> MyZone is for anyone who wants an accurate, gamified and motivating wearable experience. </h3>
         </div>
         <img src='/assets/images/myZone.jpg' width={'100%'} />
+        <h2 style={{color:'#c41230'}}>2500 EGP</h2>
         <a href='https://accept.paymobsolutions.com/p/bVr'>
           <Button className='tsg-btn'>BUY NOW</Button>
         </a>

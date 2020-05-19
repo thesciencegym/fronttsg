@@ -3,20 +3,40 @@ import './order.scss';
 
 import React from 'react'
 import Header from './Header';
+import { Spin } from 'antd';
 
 class OrderResult extends React.Component {
+  params = new URLSearchParams(this.props.location.search);
+  success = this.params.get('success');
+  merchant_order_id = this.params.get('merchant_order_id')
+  state={
+    require_shipping: false,
+    loading: false
+  }
+  componentDidMount(){
+    const ORDER_URL = 'https://science-gym-backend.herokuapp.com/order'; // Test backend
+    // const ORDER_URL = 'https://science-gym-backend-prod.herokuapp.com/order'; // Production backend
+    if( this.success ){
+      this.setState({loading: true})
+      fetch(ORDER_URL + `/${this.merchant_order_id}`).then(r=>r.json())
+      .then(res=>{
+        if(res.product.require_shipping) this.setState({require_shipping: true})
+      })
+      .finally(()=>{
+        this.setState({loading: false})
+      })
+    }
+  }
   render() {
-    const params = new URLSearchParams(this.props.location.search);
-    const success = params.get('success');
-    const merchant_order_id = params.get('merchant_order_id')
+    if(!this.state.loading && this.success == true ) return <Spin/>
     return <div>
         <Header title= 'Our Online Store'/>
         <div className='order-result'>   
-          {success == 'true' ? <div className='success'>
+          {this.success == 'true' ? <div className='success'>
               <CheckOutlined />
               <h2>Payment Successful!</h2>
               <p>Thank you for shopping at TSG’s online store! your order has been successfully placed.</p>
-              { merchant_order_id && <p>An email is sent now to your Inbox, please follow the steps to activate your account.</p>}
+              { !this.state.require_shipping && <p>An email is sent now to your Inbox, please follow the steps to activate your account.</p>}
           </div>: <div className='fail'>
               <ExclamationOutlined />
               <h2>OOPS!</h2>

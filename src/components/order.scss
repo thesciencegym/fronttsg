@@ -42,7 +42,7 @@ label{
         flex-direction: column;
     }
 }
-._row{
+._row, .address_row{
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
@@ -50,9 +50,16 @@ label{
 ._form-group{
     display: flex;
     flex-direction: column;
+    &.agree{
+        display: flex;
+        justify-content: center;
+    }
 }
 ._row ._form-group{
     width: 48%;
+}
+.address_row ._form-group{
+    width: 23%;
 }
 ._gender{
     display: flex;
