@@ -101,7 +101,7 @@ class Order extends React.Component {
         let shipping_info = {...this.state.shipping_info}
         let value = type =='select' ? e : e.target.value
         shipping_info[field].value = value
-        if( value.length > 1  ) {
+        if( value.length > 0  ) {
             shipping_info[field].validation = 'success'
         } else {
             shipping_info[field].validation = undefined
