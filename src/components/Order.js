@@ -47,10 +47,13 @@ class Order extends React.Component {
         this.setState({loading: true})
         let order ={ product_code: this.productId, payment_method: payment_method}
         _map(this.state.order, (val,item)=> order[item] = val['value'] )
-        if( payment_method == 'cash' || this.current_project.is_shipping) order['country'] = 'EG'
+        if( payment_method == 'cash' || this.current_project.is_shipping){
+            order['country'] = 'EG'
+            order['city'] = this.state.shipping_info.state.value
+        } 
         let billing_data = {}
         _map(this.state.shipping_info, (val,item)=> billing_data[item] = (this.current_project.is_shipping || this.state.payment_method.value == 'cash') ? val['value'] : 'N/A' )
-        this.current_project.is_shipping && delete order.city
+        // this.current_project.is_shipping && delete order.city
         order['billing_data'] = billing_data
        console.log('order',order)
         
@@ -141,7 +144,7 @@ class Order extends React.Component {
             <div className='product-card vertical-horizontal-center' >
                 <Row>
                     <Col md={10} className='vertical-horizontal-center'>
-                        <img width={'100%'} src='/assets/images/logo.png' style={{backgroundColor: 'black', padding:'5px 10px'}}/>
+                        <img width={'100%'} src='/assets/images/logo.png' style={{backgroundColor: 'black', padding:'20px 15px'}}/>
                     </Col>
                     <Col className='vertical-horizontal-center' md={14} style={{flexDirection:'column'}}>
                        <h3>{this.current_project.name}</h3>
