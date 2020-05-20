@@ -115,18 +115,18 @@ class Order extends React.Component {
     }
 
   render() {
-      if(!this.current_project) return <div><h2>Not a valid product</h2></div>
+    if(!this.current_project) return <div><h2>Not a valid product</h2></div>
     const { order } = this.state
-    
+    const payment_method = this.state.payment_method.value
     let disabled = !this.state.agree 
     !disabled && _map(this.state.order, (val,item) =>{
-        if( (this.current_project.is_shipping || this.state.payment_method.value =='cash') && ['city','country'].includes( item ) ) return
+        if( (this.current_project.is_shipping || payment_method =='cash') && ['city','country'].includes( item ) ) return
         if ( val.validation == undefined || val.validation == 'error' ){
             disabled = true
             return;
         }
     })
-    if( !disabled && !this.current_project.is_shipping && this.state.payment_method =='card' ){
+    if( !disabled && (this.current_project.is_shipping || payment_method =='cash' ) ){
         _map(this.state.shipping_info, (val,item) =>{    
             if ( val.validation == undefined || val.validation == 'error' ){
                 disabled = true
@@ -140,10 +140,10 @@ class Order extends React.Component {
             <div className='order'>
             <div className='product-card vertical-horizontal-center' >
                 <Row>
-                    <Col md={10}>
-                        <img width={'100%'} src='/assets/images/logo.png' style={{backgroundColor: 'black'}}/>
+                    <Col md={10} className='vertical-horizontal-center'>
+                        <img width={'100%'} src='/assets/images/logo.png' style={{backgroundColor: 'black', padding:'5px 10px'}}/>
                     </Col>
-                    <Col md={14} style={{textAlign:'center'}}>
+                    <Col className='vertical-horizontal-center' md={14} style={{flexDirection:'column'}}>
                        <h3>{this.current_project.name}</h3>
                        <h1>{this.current_project.price} EGP</h1>
                     </Col>
@@ -177,7 +177,7 @@ class Order extends React.Component {
                         <div className="_form-group">
                             <Form.Item
                                 validateStatus={order.email.validation}
-                                help={this.state.emailHelp}
+                                help={this.state.emailHelp || null}
                             >
                                 <label>Email</label>
                                 <input  placeholder="Email" type="email" onChange={(e)=>this.handleChangeInput(e,'email')}/>
@@ -213,7 +213,7 @@ class Order extends React.Component {
                                 >
                                     <label >Payment Method</label>
                                     <div className="_gender">
-                                        <Radio.Group value = {this.state.payment_method.value} onChange={(e)=>this.setState({payment_method:{ ...this.state.payment_method, value: e.target.value}})} >
+                                        <Radio.Group value = {payment_method} onChange={(e)=>this.setState({payment_method:{ ...this.state.payment_method, value: e.target.value}})} >
                                             <Radio value={'cash'}>Cash on delivery</Radio>
                                             <Radio value={'card'}>Credit Card</Radio>
                                         </Radio.Group>
@@ -222,7 +222,7 @@ class Order extends React.Component {
                             </div>
                        
                     </div>
-                    {!this.current_project.is_shipping  && this.state.payment_method.value =='card' && <div className="_row ">
+                    {!this.current_project.is_shipping  && payment_method =='card' && <div className="_row ">
                         <div className="_form-group">
                             <Form.Item
                                 validateStatus={order.city.validation}
@@ -244,15 +244,15 @@ class Order extends React.Component {
                         </div>
 
                     </div>}
-                    {(this.current_project.is_shipping || this.state.payment_method.value == 'cash') && <div className='shipping_fields'>
+                    {(this.current_project.is_shipping || payment_method == 'cash') && <div className='shipping_fields'>
                         <div className="_row ">
                             <div className="_form-group">
                                 <Form.Item
                                     // validateStatus={order.city.validation}
                                 >
                                     <label>State</label>
-                                   <Select onChange={(e)=> this.handleChangeShippingInput(e, 'state', 'select')}>
-                                        <Option disabled value={''}>Select state</Option>
+                                   <Select value={this.state.shipping_info.state.value} onChange={(e)=> this.handleChangeShippingInput(e, 'state', 'select')}>
+                                        <Option disabled value={''}>State</Option>
                                        {_map(STATES, (cities,state )=>{
                                            return <Option key={state} value={state}>{state}</Option>
                                        })}
@@ -266,7 +266,7 @@ class Order extends React.Component {
                                 >
                                     <label>City</label>
                                    <Select value={this.state.shipping_info.city.value} onChange={(e)=> this.handleChangeShippingInput(e, 'city', 'select')}>
-                                        <Option disabled value={''}>Select city</Option>
+                                        <Option disabled value={''}>City</Option>
                                        {STATES[this.state.shipping_info.state.value] && STATES[this.state.shipping_info.state.value].map(city=>{
                                            return <Option key={city} value={city}>{city}</Option>
                                        })}
@@ -347,7 +347,7 @@ class Order extends React.Component {
                         loading={this.state.loading}
                         disabled={disabled}
                         >
-                            Proceed to payment
+                            { payment_method == 'card' ? 'Proceed to payment' : 'Place your order'}
                         </Button>
                     </div>
                    
