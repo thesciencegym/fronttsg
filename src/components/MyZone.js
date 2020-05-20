@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button } from 'antd'
+import { Link } from 'react-router-dom';
+
 
 class MyZone extends React.Component {
   render() {
@@ -12,9 +14,9 @@ class MyZone extends React.Component {
         </div>
         <img src='/assets/images/myZone.jpg' width={'100%'} />
         <h2 style={{color:'#c41230'}}>2500 EGP</h2>
-        <a href='https://accept.paymobsolutions.com/p/bVr'>
+        <Link to='/order/13'>
           <Button className='tsg-btn'>BUY NOW</Button>
-        </a>
+        </Link>
       </div>
       )
   }

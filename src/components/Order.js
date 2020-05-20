@@ -141,11 +141,11 @@ class Order extends React.Component {
             <div className='product-card vertical-horizontal-center' >
                 <Row>
                     <Col md={10}>
-                        <img width={'100%'} src='/assets/images/logo.png'/>
+                        <img width={'100%'} src='/assets/images/logo.png' style={{backgroundColor: 'black'}}/>
                     </Col>
                     <Col md={14} style={{textAlign:'center'}}>
                        <h3>{this.current_project.name}</h3>
-                       <h3>{this.current_project.price}</h3> 
+                       <h1>{this.current_project.price} EGP</h1>
                     </Col>
                 </Row>
                 
