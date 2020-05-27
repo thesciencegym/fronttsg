@@ -140,9 +140,28 @@ input:focus{
     .order-result{
         width: 100%;
     }
-  }
+    .product-card img{
+        margin-bottom: 20px;
+        padding: 15px;
+    }
 
-  button[disabled]{
-      background-color: #ccc;
-      cursor: not-allowed;
   }
+@media (max-width: $screen-md) {
+    .product-card{
+        width: 90%;
+        height: auto;
+    }
+    .tsg-form{
+        width: 90%;
+    }
+}
+@media (width: $screen-md) {
+    .product-card{
+        width: 60%;
+        height: auto;
+    }
+}
+button[disabled]{
+    background-color: #ccc;
+    cursor: not-allowed;
+}

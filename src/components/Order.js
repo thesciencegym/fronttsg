@@ -143,10 +143,10 @@ class Order extends React.Component {
             <div className='order'>
             <div className='product-card vertical-horizontal-center' >
                 <Row>
-                    <Col md={10} className='vertical-horizontal-center'>
+                    <Col md={10} sm={24} xs={24} className='vertical-horizontal-center'>
                         <img width={'100%'} src='/assets/images/logo.png' style={{backgroundColor: 'black', padding:'20px 15px'}}/>
                     </Col>
-                    <Col className='vertical-horizontal-center' md={14} style={{flexDirection:'column'}}>
+                    <Col className='vertical-horizontal-center' md={14} sm={24} xs={24} style={{flexDirection:'column'}}>
                        <h3>{this.current_project.name}</h3>
                        <h1>{this.current_project.price} EGP</h1>
                     </Col>
