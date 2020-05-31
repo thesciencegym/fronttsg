@@ -7,7 +7,7 @@ import './Typography.scss'
 import Footer from './components/Footer';
 import Order from './components/Order';
 import OrderResult from './components/OrderResult';
-import PaymentResult from './components/PaymentResult'
+import CashResult from './components/CashResult'
 function App() {
   const history = createBrowserHistory({});
 
@@ -17,7 +17,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/order/:id" component={Order} />
           <Route exact path="/thank-you" component={OrderResult} />
-          <Route exact path="/done-payment" component={PaymentResult} />
+          <Route exact path="/done-order" component={CashResult} />
         <Footer/>
       </div>
     </Router>

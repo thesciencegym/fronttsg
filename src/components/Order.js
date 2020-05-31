@@ -74,7 +74,7 @@ class Order extends React.Component {
         .then(res=>{
             if( payment_method == 'cash' ){
                 const success = res.success? 'true':'false'
-                this.props.history.push(`/done-payment?success=${success}`)
+                this.props.history.push(`/done-order?success=${success}`)
             }
         })
         .finally(()=> this.setState({loading: false}))

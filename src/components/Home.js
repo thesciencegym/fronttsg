@@ -135,7 +135,7 @@ class Home extends React.Component {
                             <Col lg={12} md={24} xs={24}>
                                 <div className='box'>
                                     <p>1 Class</p>
-                                    <h1>150 EGP <span>/class</span></h1>
+                                    <h1>100 EGP <span>/class</span></h1>
                                     <Link to='/order/6'>
                                         <Button className='tsg-btn'>BOOK NOW</Button>
                                     </Link>
@@ -144,8 +144,28 @@ class Home extends React.Component {
                             <Col lg={12} md={24} xs={24}>
                                 <div className='box'>
                                     <p>1 Week Package</p>
-                                    <h1>800 EGP <span>/week</span></h1>
+                                    <h1>600 EGP <span>/week</span></h1>
                                     <Link to='/order/3'>
+                                        <Button className='tsg-btn'>BOOK NOW</Button>
+                                    </Link>
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col lg={12} md={24} xs={24}>
+                                <div className='box'>
+                                    <p>2 Weeks Package</p>
+                                    <h1>1000 EGP <span>/class</span></h1>
+                                    <Link to='/order/14'>
+                                        <Button className='tsg-btn'>BOOK NOW</Button>
+                                    </Link>
+                                </div>
+                            </Col>
+                            <Col lg={12} md={24} xs={24}>
+                                <div className='box'>
+                                    <p>1 Month Package</p>
+                                    <h1>1500 EGP <span>/week</span></h1>
+                                    <Link to='/order/15'>
                                         <Button className='tsg-btn'>BOOK NOW</Button>
                                     </Link>
                                 </div>
@@ -164,7 +184,7 @@ class Home extends React.Component {
                                 </content>
                                 <content>
                                     <h3> <img src='/assets/images/team.png' width={30}/> Target</h3>
-                                    <p>Athletes + 16 years</p>
+                                    <p>Athletes + 14 years</p>
                                 </content>
                                 <content>
                                     <h3> <ClockCircleOutlined /> Duration</h3>
@@ -185,15 +205,15 @@ class Home extends React.Component {
                                 </div>
                             </div>
                         </Collapse.Panel>
-                        <Collapse.Panel header="Immunity Enhancing Nutrition Program" key="2">
+                        <Collapse.Panel header="General Nutrition Program" key="2">
                             <div className='panel-wrap'>
                                 <content>
                                     <h3> <CheckOutlined /> Purpose</h3>
-                                    <p>To improve their immunity and fight viruses better and improve general health</p>
+                                    <p>Our Nutrition program will help you reach your optimum body composition goals.</p>
                                 </content>
                                 <content>
                                     <h3> <img src='/assets/images/team.png' width={30}/> Target</h3>
-                                    <p>Above 40 and Under 18</p>
+                                    <p>Everyone</p>
                                 </content>
                                 <content>
                                     <h3> <ClockCircleOutlined /> Duration</h3>
