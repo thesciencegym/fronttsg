@@ -13,4 +13,22 @@ export const PRODUCTS = [
     {id: 13, name: 'MyZone Belt', price: 2500, is_shipping: true},
     {id: 14, name: 'Online Classes (2 weeks)', price: 1000, is_shipping: false},
     {id: 15, name: 'Online Classes (1 month)', price: 1500, is_shipping: false},
+
+    {id: 16, name: 'TSG2GO Individual (8 sessions)', price: 2400, is_shipping: false},
+    {id: 17, name: 'TSG2GO Individual (12 sessions)', price: 3300, is_shipping: false},
+    {id: 18, name: 'TSG2GO Individual (16 sessions)', price: 4000, is_shipping: false},
+    {id: 19, name: 'TSG2GO Individual (24 sessions)', price: 5400, is_shipping: false},
+    {id: 20, name: 'TSG2GO Individual (48 sessions)', price: 9600, is_shipping: false},
+
+    {id: 21, name: 'TSG2GO Couple (8 sessions)', price: 4400, is_shipping: false},
+    {id: 22, name: 'TSG2GO Couple (12 sessions)', price: 6000, is_shipping: false},
+    {id: 23, name: 'TSG2GO Couple (16 sessions)', price: 7200, is_shipping: false},
+    {id: 24, name: 'TSG2GO Couple (24 sessions)', price: 9800, is_shipping: false},
+    {id: 25, name: 'TSG2GO Couple (48 sessions)', price: 17300, is_shipping: false},
+
+    {id: 26, name: 'TSG2GO Family (8 sessions)', price: 8000, is_shipping: false},
+    {id: 27, name: 'TSG2GO Family (12 sessions)', price: 10800, is_shipping: false},
+    {id: 28, name: 'TSG2GO Family (16 sessions)', price: 13000, is_shipping: false},
+    {id: 29, name: 'TSG2GO Family (24 sessions)', price: 17500, is_shipping: false},
+    {id: 30, name: 'TSG2GO Family (48 sessions)', price: 30000, is_shipping: false},
 ]

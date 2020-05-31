@@ -6,7 +6,8 @@ import { Tabs, Row, Col, Button, Collapse } from 'antd'
 import './home.scss'
 import { Link } from 'react-router-dom';
 import Header from './Header';
-import MyZone from './MyZone';
+import Products from './homeTabs/Products';
+import TSG2GO from './homeTabs/tsg2go';
 
 const { TabPane } = Tabs;
 
@@ -342,14 +343,17 @@ class Home extends React.Component {
                     </div>
 
                 </TabPane>
-                <TabPane tab="Events" key="4">
+                <TabPane tab="TSG2GO" key="4">
+                    <TSG2GO/>
+                </TabPane>
+                <TabPane tab="Events" key="5">
                     <div style={{margin: '30px 0'}}>
                         <h2 style={{color:'#c41230'}}>COMING SOON!</h2>
 
                     </div>
                 </TabPane>
-                <TabPane tab="Products" key="5">
-                    <MyZone/>
+                <TabPane tab="Products" key="6">
+                    <Products/>
                 </TabPane>
             </Tabs>
         </div>

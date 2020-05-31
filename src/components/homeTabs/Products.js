@@ -3,7 +3,7 @@ import { Button } from 'antd'
 import { Link } from 'react-router-dom';
 
 
-class MyZone extends React.Component {
+class Products extends React.Component {
   render() {
     return(
       <div className='my-zone' >
@@ -21,5 +21,5 @@ class MyZone extends React.Component {
       )
   }
 }
-export default MyZone
+export default Products
 

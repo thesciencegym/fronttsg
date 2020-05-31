@@ -93,10 +93,27 @@ content{
             margin-left: 0;
         }
     }
+
+    &.tsg2go{
+        .box{
+            width: 90%;
+            margin-bottom: 20px;
+
+        }
+    }
+
+    &.select-card{
+        .box{
+            width: 90%;
+            height: 200px;
+            margin-bottom: 20px;
+
+        }
+    }
 }
 
 .plans{
-    margin: 40px 0 100px;
+    margin: 40px 0 50px;
 }
 .panel-wrap{
     text-align: left;
