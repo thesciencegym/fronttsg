@@ -31,9 +31,10 @@ class Home extends React.Component {
                                 
                                 <h3><img src='/assets/images/smartphone.png' width={30}/> Full Access to TSG App features:</h3>
                                 <ul>
-                                    <li>Track your daily fitness activities passed on personalized workouts that are designed specifically for you based on your fitness level and musculoskeletal condition.</li>
-                                    <li>Check online classes schedule.</li>
-                                    <li>Join to our club community.</li>
+                                    <li>Track your daily fitness activities.</li>
+                                    <li>Personalized workouts that are designed specifically for you bases on your fitness level and musculoskeletal condition.</li>
+                                    <li>Monthly updated online classes’ schedule.</li>
+                                    <li>TSG club community.</li>
                                     <li>Open channel of communication with your coach.</li>
                                 </ul>
                             </content>
@@ -47,11 +48,11 @@ class Home extends React.Component {
                             </content>
                             <content>
                                 <h3> <img src='/assets/images/physiotherapy.png' width={30}/> Physiotherapy Screening Session</h3>
-                                <p>Online fitness assessment and postural check to determine your fitness level.</p>
+                                <p>Online physiotherapy screening session to discuss any health concerns.</p>
                             </content>
                             <content>
                                 <h3> <img src='/assets/images/tofu.png' width={30}/> Bi-Weekly Online Nutrition Session</h3>
-                                <p>Bi-Weekly online nutrition session, where you get your personalized nutrition plans that are designed according to your goals.</p>
+                                <p>Biweekly Nutrition session, where you receive your individually tailored meal plans designed according to your goals.</p>
                             </content>
                             <content>
                                 <h3> <img src='/assets/images/team.png' width={30}/> Full Access to our online classes</h3>
