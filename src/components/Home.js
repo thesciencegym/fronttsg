@@ -32,7 +32,7 @@ class Home extends React.Component {
                                 <h3><img src='/assets/images/smartphone.png' width={30}/> Full Access to TSG App features:</h3>
                                 <ul>
                                     <li>Track your daily fitness activities.</li>
-                                    <li>Personalized workouts that are designed specifically for you bases on your fitness level and musculoskeletal condition.</li>
+                                    <li>Personalized workouts that are designed specifically for you based on your fitness level and musculoskeletal condition.</li>
                                     <li>Monthly updated online classes’ schedule.</li>
                                     <li>TSG club community.</li>
                                     <li>Open channel of communication with your coach.</li>

@@ -7,8 +7,8 @@ import Header from './Header';
 import { PRODUCTS } from '../PRODUCTS';
 import { STATES } from '../STATES-CITIES';
 
-const ORDER_URL = 'https://science-gym-backend.herokuapp.com/order'; // Test backend
-// const ORDER_URL = 'https://science-gym-backend-prod.herokuapp.com/order'; // Production backend
+// const ORDER_URL = 'https://science-gym-backend.herokuapp.com/order'; // Test backend
+const ORDER_URL = 'https://science-gym-backend-prod.herokuapp.com/order'; // Production backend
 
 const {Option} = Select
 class Order extends React.Component {
