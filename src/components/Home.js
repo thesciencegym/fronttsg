@@ -1,5 +1,5 @@
 
-import { CheckOutlined, RetweetOutlined, ClockCircleOutlined, DollarOutlined } from '@ant-design/icons';
+import { CheckOutlined, RetweetOutlined, ClockCircleOutlined, DollarOutlined, OrderedListOutlined } from '@ant-design/icons';
 import React from 'react'
 import { Tabs, Row, Col, Button, Collapse } from 'antd'
 
@@ -56,10 +56,17 @@ class Home extends React.Component {
                                 <p>Biweekly Nutrition session, where you receive your individually tailored meal plans designed according to your goals.</p>
                             </content>
                             <content>
+                                <h3> <OrderedListOutlined />  Steps</h3>
+                                <p>1. Make the purchase</p>
+                                <p>2. An email will be sent to you to activate your account and download TSG App.</p>
+                                <p>3. Our coach will contact you to kick start the program within 48 hours of the purchase.</p>
+                                <p>4. Biweekly update to the training program based on the progression.</p>
+                                <p>5. Book your nutrition sessions through the App.</p>
+                            </content>
+                            <content>
                                 <h3> <img src='/assets/images/team.png' width={30}/> Full Access to our online classes</h3>
                                 <p>Steps of attending the online GX classes.</p>
                             </content>
-                            
                         </div>
                         <Row>
                             <Col lg={8} md={24}>
@@ -201,6 +208,14 @@ class Home extends React.Component {
                                     <p>Biweekly</p>
                                 </content>
                                 <content>
+                                    <h3> <OrderedListOutlined /> Steps</h3>
+                                    <p>1. Make the purchase.</p>
+                                    <p>2. An email will be sent to you to activate your account and download TSG App.</p>
+                                    <p>3. Our Nutritionist will contact you for the First Nutrition Assessment session within 24 hours.</p>
+                                    <p>4. Book your sessions through the App.</p>
+                                    <p>5. Daily follow up.</p>
+                                </content>
+                                <content>
                                     <h3> <DollarOutlined /> Price</h3>
                                     <p>700 EGP</p>
                                 </content>
@@ -230,6 +245,14 @@ class Home extends React.Component {
                                     <p>Weekly Plans</p>
                                 </content>
                                 <content>
+                                    <h3> <OrderedListOutlined /> Steps</h3>
+                                    <p>1. Make the purchase.</p>
+                                    <p>2. An email will be sent to you to activate your account and download TSG App.</p>
+                                    <p>3. Our Nutritionist will contact you for the First Nutrition Assessment session within 24 hours.</p>
+                                    <p>4. Book your sessions through the App.</p>
+                                    <p>5. Daily follow up.</p>
+                                </content>
+                                <content>
                                     <h3> <DollarOutlined /> Price</h3>
                                     <p>600 EGP</p>
                                 </content>
@@ -256,6 +279,13 @@ class Home extends React.Component {
                                     <p>12 sessions</p>
                                     <p>24 sessions</p>
                                     <p>48 sessions</p>
+                                </content>
+                                <content>
+                                    <h3> <OrderedListOutlined /> Steps</h3>
+                                    <p>1. Make the purchase.</p>
+                                    <p>2. An email will be sent to you to activate your account and download TSG App.</p>
+                                    <p>3. Our coach will contact you to kick start the program through the online fitness assessment session.</p>
+                                    <p>4. The links to the live training with your coach will be sent to you via the App.</p>
                                 </content>
                                 <content>
                                     <h3> <DollarOutlined /> Price</h3>
@@ -314,6 +344,14 @@ class Home extends React.Component {
                                     <h3> <ClockCircleOutlined /> Duration</h3>
                                     <p>1 month</p>
                                     <p>3 months</p>
+                                </content>
+                                <content>
+                                    <h3> <OrderedListOutlined /> Steps</h3>
+                                    <p>1. Make the purchase.</p>
+                                    <p>2. An email will be sent to you to activate your account and download TSG App.</p>
+                                    <p>3. Our Physiotherapist will contact you to start the program within 24 hours. </p>
+                                    <p>4. Weekly online assessment sessions to check progress and update the program.</p>
+                                    <p>5. Daily follow up</p>
                                 </content>
                                 <content>
                                     <h3> <DollarOutlined /> Price</h3>

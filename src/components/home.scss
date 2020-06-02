@@ -13,7 +13,10 @@
 .tab1-wrap{
     text-align: left;
     width: 60%;
-    
+    .anticon svg{
+        color: $main-color;
+        font-size: 30px;
+    }
 }
 
 .tab2-wrap{
@@ -108,6 +111,12 @@ content{
             height: 200px;
             margin-bottom: 20px;
 
+            // .box-selected{
+            //     background-color: $main-color;
+            //         h1{
+            //             color: #f8f8f8;
+            //         }
+            // }
         }
     }
 }

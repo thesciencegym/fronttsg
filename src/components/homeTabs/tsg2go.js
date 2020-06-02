@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { Row, Col, Button} from 'antd'
+import { Row, Col, Button } from 'antd'
 
 import { PRODUCTS } from '../../PRODUCTS';
 
-const myProducts = {0: [16,17,18,19,20], 1: [21,22,23,24,25], 2: [26,27,28,29,30]}
+const myProducts = { 0: [16, 17, 18, 19, 20], 1: [21, 22, 23, 24, 25], 2: [26, 27, 28, 29, 30] };
+const titles = ['Individual', 'Couple', 'Family'];
 
 class TSG2GO extends React.Component {
 
-  state = {selectedIndex: '0'}
+  state = { selectedIndex: '0' }
 
   _render_prices() {
     let p1 = PRODUCTS.find(p => p.id == myProducts[this.state.selectedIndex][0])
@@ -19,81 +20,85 @@ class TSG2GO extends React.Component {
 
     return (
       <div className='plans tsg2go'>
-      <h2 className='tab-title'>Payment Plans</h2>
-      <Row>
+        <h2 className='tab-title'>Payment Plans for {titles[this.state.selectedIndex]}</h2>
+        <Row>
           <Col lg={12} md={24} xs={24}>
-              <div className='box'>
-                  <p>8 SESSIONS</p>
-                  <h1>{p1.price}</h1>
-                  <Link to={'/order/' + p1.id}>
-                      <Button className='tsg-btn'>BOOK NOW</Button>
-                  </Link>
-              </div>
+            <div className='box'>
+              <p>8 SESSIONS</p>
+              <h1>{p1.price}</h1>
+              <Link to={'/order/' + p1.id}>
+                <Button className='tsg-btn'>BOOK NOW</Button>
+              </Link>
+            </div>
           </Col>
           <Col lg={12} md={24} xs={24}>
-              <div className='box'>
-                  <p>12 SESSIONS</p>
-                  <h1>{p2.price}</h1>
-                  <Link to={'/order/' + p2.id}>
-                      <Button className='tsg-btn'>BOOK NOW</Button>
-                  </Link>
-              </div>
+            <div className='box'>
+              <p>12 SESSIONS</p>
+              <h1>{p2.price}</h1>
+              <Link to={'/order/' + p2.id}>
+                <Button className='tsg-btn'>BOOK NOW</Button>
+              </Link>
+            </div>
           </Col>
-      </Row>
+        </Row>
 
-      <Row>
+        <Row>
           <Col lg={8} md={24} xs={24}>
-              <div className='box'>
-                  <p>16 SESSIONS</p>
-                  <h1>{p3.price}</h1>
-                  <Link to={'/order/' + p3.id}>
-                      <Button className='tsg-btn'>BOOK NOW</Button>
-                  </Link>
-              </div>
+            <div className='box'>
+              <p>16 SESSIONS</p>
+              <h1>{p3.price}</h1>
+              <Link to={'/order/' + p3.id}>
+                <Button className='tsg-btn'>BOOK NOW</Button>
+              </Link>
+            </div>
           </Col>
           <Col lg={8} md={24} xs={24}>
-              <div className='box'>
-                  <p>24 SESSIONS</p>
-                  <h1>{p4.price}</h1>
-                  <Link to={'/order/' + p4.id}>
-                      <Button className='tsg-btn'>BOOK NOW</Button>
-                  </Link>
-              </div>
+            <div className='box'>
+              <p>24 SESSIONS</p>
+              <h1>{p4.price}</h1>
+              <Link to={'/order/' + p4.id}>
+                <Button className='tsg-btn'>BOOK NOW</Button>
+              </Link>
+            </div>
           </Col>
           <Col lg={8} md={24} xs={24}>
-              <div className='box'>
-                  <p>48 SESSIONS</p>
-                  <h1>{p5.price}</h1>
-                  <Link to={'/order/' + p5.id}>
-                      <Button className='tsg-btn'>BOOK NOW</Button>
-                  </Link>
-              </div>
+            <div className='box'>
+              <p>48 SESSIONS</p>
+              <h1>{p5.price}</h1>
+              <Link to={'/order/' + p5.id}>
+                <Button className='tsg-btn'>BOOK NOW</Button>
+              </Link>
+            </div>
           </Col>
-      </Row>
-  </div>
+        </Row>
+      </div>
     )
   }
 
   _render_buttons() {
-    let selectedStyle = {border: 'medium solid #c41230'};
+    // let selectedStyle = { border: 'medium solid #c41230' };
+    let selectedStyle = { backgroundColor: '#c41230' };
+    let selectedStyleText = { color: 'white' };
+
+    
     return (
       <div className='plans select-card'>
         <h2 className='tab-title'>Please selece one of the following</h2>
 
         <Row>
           <Col lg={8} md={24} xs={24}>
-            <div className='box' onClick={() => this.setState({selectedIndex: 0})} style={this.state.selectedIndex == 0 ? selectedStyle : {} }>
-              <h1>Individual</h1>
+            <div className='box' onClick={() => this.setState({ selectedIndex: 0 })} style={this.state.selectedIndex == 0 ? selectedStyle : {}}>
+              <h1 style={this.state.selectedIndex == 0 ? selectedStyleText : {}}>Individual</h1>
             </div>
           </Col>
           <Col lg={8} md={24} xs={24}>
-            <div className='box' onClick={() => this.setState({selectedIndex: 1})} style={this.state.selectedIndex == 1 ? selectedStyle : {} }>
-              <h1>Couple</h1>
+            <div className='box box-selected' onClick={() => this.setState({ selectedIndex: 1 })} style={this.state.selectedIndex == 1 ? selectedStyle : {}}>
+              <h1 style={this.state.selectedIndex == 1 ? selectedStyleText : {}}>Couple</h1>
             </div>
           </Col>
           <Col lg={8} md={24} xs={24}>
-            <div className='box' onClick={() => this.setState({selectedIndex: 2})} style={this.state.selectedIndex == 2 ? selectedStyle : {} }>
-              <h1>Family</h1>
+            <div className='box' onClick={() => this.setState({ selectedIndex: 2 })} style={this.state.selectedIndex == 2 ? selectedStyle : {}}>
+              <h1 style={this.state.selectedIndex == 2 ? selectedStyleText : {}}>Family</h1>
             </div>
           </Col>
         </Row>
@@ -105,32 +110,60 @@ class TSG2GO extends React.Component {
     return (
       <div>
         <h2 className='tab-title'>One on one coaching with TSG coaches at your place.</h2>
-        <Row>
-          <Col md={12}>
-            <div className='tab2-wrap'>
-              <h3>TSG team is coming to you with all what you need to reach your training goals.</h3>
-              <content>
-                <h3> <img src='/assets/images/star.png' width={30} /> Fitness assessment</h3>
-                <p></p>
-              </content>
-              <content>
-                <h3> <img src='/assets/images/team.png' width={30} /> One on one training sessions</h3>
-                <p>.......</p>
-              </content>
-              <content>
-                <h3> <img src='/assets/images/tofu.png' width={30} /> Individually tailored Nutrition plans</h3>
-                <p>.......</p>
-              </content>
-              <content>
-                <h3> <img src='/assets/images/physiotherapy.png' width={30} /> Physiotherapy screening session</h3>
-                <p>.......</p>
-              </content>
-            </div>
-          </Col>
-          <Col>
-            <img src='/assets/images/fitgirl.png' />
-          </Col>
-        </Row>
+
+        <div className='tab2-wrap'>
+          <h3>We’re pleased to announce that TSG is launching its latest fitness product, namely "TSG2GO"</h3>
+          <h3>What makes our product different and special is that you can enjoy your private coaching sessions from the comfort of your own HOME </h3>
+          <h3>We will provide you with your very own Private Coach, all the necessary equipment and tools that you will need in your training program.</h3>
+          <div style={{ marginTop: 40 }}>
+
+            <Row>
+              <Col md={12}>
+                <h2>Details:</h2>
+                <content>
+                  <h3> <img src='/assets/images/star.png' width={30} /> Fitness assessment</h3>
+                </content>
+                <content>
+                  <h3> <img src='/assets/images/team.png' width={30} /> One on one training sessions</h3>
+                </content>
+                <content>
+                  <h3> <img src='/assets/images/tofu.png' width={30} /> Individually tailored Nutrition plans</h3>
+                </content>
+                <content>
+                  <h3> <img src='/assets/images/physiotherapy.png' width={30} /> Physiotherapy screening session</h3>
+                </content>
+                <h2 style={{ marginTop: 20 }}>Our coaches:</h2>
+                <content>
+                  <h3>1. Kamal Ashraf</h3>
+                  <h3>2. Abdelrahman Refaey</h3>
+                  <h3>3. Ahmed ElWassif</h3>
+                  <h3>4. Mohamed Samir</h3>
+                  <h3>5. Mohamed Osama</h3>
+                  <h3>6. Adham Ezzat</h3>
+                  <h3>7. Rami Khamees</h3>
+                  <h3>8. Kamal ElAzab</h3>
+                  <h3>9. Mennatallah Mohamed</h3>
+                </content>
+
+                <h2 tyle={{ marginTop: 20 }}>Steps:</h2>
+                <content>
+                  <h3>1. Choose your coach</h3>
+                  <h3>2. Make the purchase</h3>
+                  <h3>3. An email will be sent to you to activate your account and download the App.</h3>
+                  <h3>4. Check our coaches' schedule on the App.</h3>
+                  <h3>5. Book your 1st session</h3>
+                  <h3>6. Our coach will contact you to confirm the session date and time.</h3>
+                </content>
+
+              </Col>
+              <Col md={12}>
+                <img src='/assets/images/training_at_your_door_step.jpg' width={'100%'} />
+              </Col>
+            </Row>
+
+          </div>
+        </div>
+
         {this._render_buttons()}
         {this._render_prices()}
       </div>
