@@ -131,6 +131,10 @@ class Home extends React.Component {
                             </Col>
                         </Row>
                     </div>
+                    <div>
+                        <h2 className='tab-title'>Schedule</h2>
+                        <img src='/assets/images/june_schedule.jpg' width={'100%'}/>
+                    </div>
                     <div className='plans'>
                         <h2 className='tab-title'>Payment Plans</h2>
                         <Row>
