@@ -56,14 +56,6 @@ class Home extends React.Component {
                                 <p>Biweekly Nutrition session, where you receive your individually tailored meal plans designed according to your goals.</p>
                             </content>
                             <content>
-                                <h3> <OrderedListOutlined />  Steps</h3>
-                                <p>1. Make the purchase</p>
-                                <p>2. An email will be sent to you to activate your account and download TSG App.</p>
-                                <p>3. Our coach will contact you to kick start the program within 48 hours of the purchase.</p>
-                                <p>4. Biweekly update to the training program based on the progression.</p>
-                                <p>5. Book your nutrition sessions through the App.</p>
-                            </content>
-                            <content>
                                 <h3> <img src='/assets/images/team.png' width={30}/> Full Access to our online classes</h3>
                                 <p>Steps of attending the online GX classes.</p>
                             </content>
@@ -79,6 +71,17 @@ class Home extends React.Component {
                                 <img src='/assets/images/step3.jpg' width={314}/>
                             </Col>
                         </Row>
+
+                        <div className='tab1-wrap' style={{marginTop: 20}}>
+                        <content>
+                                <h3> <OrderedListOutlined />  Steps</h3>
+                                <p>1. Make the purchase</p>
+                                <p>2. An email will be sent to you to activate your account and download TSG App.</p>
+                                <p>3. Our coach will contact you to kick start the program within 48 hours of the purchase.</p>
+                                <p>4. Biweekly update to the training program based on the progression.</p>
+                                <p>5. Book your nutrition sessions through the App.</p>
+                            </content>
+                            </div>
                         <div className='plans'>
                         <h2 className='tab-title'>Payment Plans</h2>
                         <Row>

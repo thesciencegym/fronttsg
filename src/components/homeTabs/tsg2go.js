@@ -80,7 +80,7 @@ class TSG2GO extends React.Component {
     let selectedStyle = { backgroundColor: '#c41230' };
     let selectedStyleText = { color: 'white' };
 
-    
+
     return (
       <div className='plans select-card'>
         <h2 className='tab-title'>Please selece one of the following</h2>
@@ -106,15 +106,50 @@ class TSG2GO extends React.Component {
 
     )
   }
+
+  _render_coach(name) {
+    return (
+      <Col lg={8} md={24} xs={24}>
+        <div className='box'>
+          <h3>{name}</h3>
+        </div>
+      </Col>
+    )
+  }
+
+  _render_coaches() {
+    return (
+      <div className='plans coach-card'>
+        <h2 className='tab-title'>Our Coaches</h2>
+
+        <Row>
+          {this._render_coach('Kamal Ashraf')}
+          {this._render_coach('Abdelrahman Refaey')}
+          {this._render_coach('Ahmed ElWassif')}
+        </Row>
+        <Row>
+          {this._render_coach('Mohamed Samir')}
+          {this._render_coach('Mohamed Osama')}
+          {this._render_coach('Adham Ezzat')}
+        </Row>
+        <Row>
+          {this._render_coach('Rami Khamees')}
+          {this._render_coach('Kamal ElAzab')}
+          {this._render_coach('Mennatallah Mohamed')}
+        </Row>
+      </div>
+    )
+  }
+
   render() {
     return (
       <div>
         <h2 className='tab-title'>One on one coaching with TSG coaches at your place.</h2>
 
-        <div className='tab2-wrap'>
-          <h3>We’re pleased to announce that TSG is launching its latest fitness product, namely "TSG2GO"</h3>
-          <h3>What makes our product different and special is that you can enjoy your private coaching sessions from the comfort of your own HOME </h3>
-          <h3>We will provide you with your very own Private Coach, all the necessary equipment and tools that you will need in your training program.</h3>
+        <div className='tab4-wrap'>
+          <h4>We’re pleased to announce that TSG is launching its latest fitness product, namely "TSG2GO"</h4>
+          <h4>What makes our product different and special is that you can enjoy your private coaching sessions from the comfort of your own HOME </h4>
+          <h4>We will provide you with your very own Private Coach, all the necessary equipment and tools that you will need in your training program.</h4>
           <div style={{ marginTop: 40 }}>
 
             <Row>
@@ -132,27 +167,11 @@ class TSG2GO extends React.Component {
                 <content>
                   <h3> <img src='/assets/images/physiotherapy.png' width={30} /> Physiotherapy screening session</h3>
                 </content>
-                <h2 style={{ marginTop: 20 }}>Our coaches:</h2>
+                <h2 style={{ marginTop: 40 }}>Steps:</h2>
                 <content>
-                  <h3>1. Kamal Ashraf</h3>
-                  <h3>2. Abdelrahman Refaey</h3>
-                  <h3>3. Ahmed ElWassif</h3>
-                  <h3>4. Mohamed Samir</h3>
-                  <h3>5. Mohamed Osama</h3>
-                  <h3>6. Adham Ezzat</h3>
-                  <h3>7. Rami Khamees</h3>
-                  <h3>8. Kamal ElAzab</h3>
-                  <h3>9. Mennatallah Mohamed</h3>
-                </content>
-
-                <h2 tyle={{ marginTop: 20 }}>Steps:</h2>
-                <content>
-                  <h3>1. Choose your coach</h3>
-                  <h3>2. Make the purchase</h3>
-                  <h3>3. An email will be sent to you to activate your account and download the App.</h3>
-                  <h3>4. Check our coaches' schedule on the App.</h3>
-                  <h3>5. Book your 1st session</h3>
-                  <h3>6. Our coach will contact you to confirm the session date and time.</h3>
+                  <h5>1. Make the purchase</h5>
+                  <h5>2. An email will be sent to you to activate your account and download the App.</h5>
+                  <h5>3. Our coach will contact you to confirm the session date and time.</h5>
                 </content>
 
               </Col>
@@ -160,9 +179,10 @@ class TSG2GO extends React.Component {
                 <img src='/assets/images/training_at_your_door_step.jpg' width={'100%'} />
               </Col>
             </Row>
-
           </div>
         </div>
+
+        {this._render_coaches()}
 
         {this._render_buttons()}
         {this._render_prices()}
