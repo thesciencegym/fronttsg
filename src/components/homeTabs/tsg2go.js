@@ -25,7 +25,7 @@ class TSG2GO extends React.Component {
           <Col lg={12} md={24} xs={24}>
             <div className='box'>
               <p>8 SESSIONS</p>
-              <h1>{p1.price}</h1>
+              <h1>{p1.price} EGP</h1>
               <Link to={'/order/' + p1.id}>
                 <Button className='tsg-btn'>BOOK NOW</Button>
               </Link>
@@ -34,7 +34,7 @@ class TSG2GO extends React.Component {
           <Col lg={12} md={24} xs={24}>
             <div className='box'>
               <p>12 SESSIONS</p>
-              <h1>{p2.price}</h1>
+              <h1>{p2.price} EGP</h1>
               <Link to={'/order/' + p2.id}>
                 <Button className='tsg-btn'>BOOK NOW</Button>
               </Link>
@@ -46,7 +46,7 @@ class TSG2GO extends React.Component {
           <Col lg={8} md={24} xs={24}>
             <div className='box'>
               <p>16 SESSIONS</p>
-              <h1>{p3.price}</h1>
+              <h1>{p3.price} EGP</h1>
               <Link to={'/order/' + p3.id}>
                 <Button className='tsg-btn'>BOOK NOW</Button>
               </Link>
@@ -55,7 +55,7 @@ class TSG2GO extends React.Component {
           <Col lg={8} md={24} xs={24}>
             <div className='box'>
               <p>24 SESSIONS</p>
-              <h1>{p4.price}</h1>
+              <h1>{p4.price} EGP</h1>
               <Link to={'/order/' + p4.id}>
                 <Button className='tsg-btn'>BOOK NOW</Button>
               </Link>
@@ -64,7 +64,7 @@ class TSG2GO extends React.Component {
           <Col lg={8} md={24} xs={24}>
             <div className='box'>
               <p>48 SESSIONS</p>
-              <h1>{p5.price}</h1>
+              <h1>{p5.price} EGP</h1>
               <Link to={'/order/' + p5.id}>
                 <Button className='tsg-btn'>BOOK NOW</Button>
               </Link>
