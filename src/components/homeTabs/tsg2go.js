@@ -154,12 +154,12 @@ class TSG2GO extends React.Component {
 
             <Row>
               <Col md={12}>
-                <h2>Details:</h2>
+                <h2>Benefits:</h2>
                 <content>
                   <h3> <img src='/assets/images/star.png' width={30} /> Fitness assessment</h3>
                 </content>
                 <content>
-                  <h3> <img src='/assets/images/team.png' width={30} /> One on one training sessions</h3>
+                  <h3> <img src='/assets/images/team.png' width={30} /> One on One training sessions</h3>
                 </content>
                 <content>
                   <h3> <img src='/assets/images/tofu.png' width={30} /> Individually tailored Nutrition plans</h3>
