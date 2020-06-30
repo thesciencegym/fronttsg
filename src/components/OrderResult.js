@@ -1,7 +1,8 @@
+import React from 'react'
+import { ORDER_URL } from '../constants';
 import { CheckOutlined, ExclamationCircleOutlined, ExclamationOutlined } from '@ant-design/icons';
 import './order.scss';
 
-import React from 'react'
 import Header from './Header';
 import { Spin } from 'antd';
 
@@ -15,8 +16,6 @@ class OrderResult extends React.Component {
     error: false
   }
   componentDidMount() {
-    // const ORDER_URL = 'https://science-gym-backend.herokuapp.com/order'; // Test backend
-    const ORDER_URL = 'https://science-gym-backend-prod.herokuapp.com/order'; // Production backend
     if (this.success) {
       this.setState({ loading: true })
       fetch(ORDER_URL + `/${this.merchant_order_id}`).then(r=>r.status == 200 ? r.json() : null)

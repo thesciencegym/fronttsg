@@ -1,4 +1,6 @@
 import React from 'react'
+import { ORDER_URL } from '../constants';
+
 import './order.scss';
 import { Modal, Form, Input, Button, Radio, Row, Col, Select } from 'antd';
 import _map from 'lodash/map'
@@ -6,9 +8,6 @@ import validator from 'validator'
 import Header from './Header';
 import { PRODUCTS } from '../PRODUCTS';
 import { STATES } from '../STATES-CITIES';
-
-// const ORDER_URL = 'https://science-gym-backend.herokuapp.com/order'; // Test backend
-const ORDER_URL = 'https://science-gym-backend-prod.herokuapp.com/order'; // Production backend
 
 const {Option} = Select
 class Order extends React.Component {
