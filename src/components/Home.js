@@ -107,89 +107,7 @@ class Home extends React.Component {
                     </div>
                     </div>
                 </TabPane>
-                <TabPane tab="Online Classes Packages" key="2">
-                    <h2 className='tab-title'>Access to all our online live classes</h2>
-                    <Row>
-                        <Col md={12}>
-                            <div className='tab2-wrap'>
-                                <h3>Benefits:</h3>
-                                <content>
-                                    <h3> <img src='/assets/images/smartphone.png' width={30}/> Access to TSG App</h3>
-                                    <p>With unlimited number of classes for a week.</p>
-                                </content>
-                                <content>
-                                    <h3> <img src='/assets/images/team.png' width={30}/> Access to our Club Community</h3>
-                                    <p>Join to our club community.</p>
-                                </content>
-                            </div>
-                        </Col>
-                        <Col>
-                            <img src='/assets/images/fitgirl.png'/>
-                        </Col>
-                    </Row>
-                    <div>
-                        <h2 className='tab-title'>Steps of attending the online GX classes</h2>
-                        <Row>
-                            <Col lg={8} md={24}>
-                                <img src='/assets/images/step1.jpg' width={314}/>
-                            </Col>
-                            <Col lg={8} md={24}>
-                                <img src='/assets/images/step2.jpg' width={314}/>
-                            </Col>
-                            <Col lg={8} md={24}>
-                                <img src='/assets/images/step3.jpg' width={314}/>
-                            </Col>
-                        </Row>
-                    </div>
-                    <div>
-                        <h2 className='tab-title'>Schedule</h2>
-                        <img src='/assets/images/june_schedule.jpg' width={'100%'}/>
-                    </div>
-                    <div className='plans'>
-                        <h2 className='tab-title'>Payment Plans</h2>
-                        <Row>
-                            <Col lg={12} md={24} xs={24}>
-                                <div className='box'>
-                                    <p>1 Class</p>
-                                    <h1>100 EGP <span>/class</span></h1>
-                                    <Link to='/order/6'>
-                                        <Button className='tsg-btn'>BOOK NOW</Button>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col lg={12} md={24} xs={24}>
-                                <div className='box'>
-                                    <p>1 Week Package</p>
-                                    <h1>600 EGP <span>/week</span></h1>
-                                    <Link to='/order/3'>
-                                        <Button className='tsg-btn'>BOOK NOW</Button>
-                                    </Link>
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col lg={12} md={24} xs={24}>
-                                <div className='box'>
-                                    <p>2 Weeks Package</p>
-                                    <h1>1000 EGP <span>/class</span></h1>
-                                    <Link to='/order/14'>
-                                        <Button className='tsg-btn'>BOOK NOW</Button>
-                                    </Link>
-                                </div>
-                            </Col>
-                            <Col lg={12} md={24} xs={24}>
-                                <div className='box'>
-                                    <p>1 Month Package</p>
-                                    <h1>1500 EGP <span>/week</span></h1>
-                                    <Link to='/order/15'>
-                                        <Button className='tsg-btn'>BOOK NOW</Button>
-                                    </Link>
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
-                </TabPane>
-                <TabPane tab="Online Programs" key="3">
+                <TabPane tab="Online Programs" key="2">
                     <div>
                     <Collapse defaultActiveKey={['1']} accordion >
                         <Collapse.Panel header="Pro Athlete Nutrition Program" key="1">
@@ -388,16 +306,16 @@ class Home extends React.Component {
                     </div>
 
                 </TabPane>
-                <TabPane tab="TSG2GO" key="4">
+                <TabPane tab="TSG2GO" key="3">
                     <TSG2GO/>
                 </TabPane>
-                <TabPane tab="Events" key="5">
+                <TabPane tab="Events" key="4">
                     <div style={{margin: '30px 0'}}>
                         <h2 style={{color:'#c41230'}}>COMING SOON!</h2>
 
                     </div>
                 </TabPane>
-                <TabPane tab="Products" key="6">
+                <TabPane tab="Products" key="5">
                     <Products/>
                 </TabPane>
             </Tabs>
