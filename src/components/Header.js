@@ -12,7 +12,7 @@ class Header extends React.Component {
             </Link> 
             <Link to='https://thesciencegym.net/'>
               <div >
-                  <h2> test </g2>
+                  <h2> test </h2>
               </div>
             </Link> 
             <h1>{this.props.title}</h1>
