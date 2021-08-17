@@ -9,7 +9,12 @@ class Header extends React.Component {
               <div className='logo'>
                   <img src='/assets/images/logo.png' width={260}/>
               </div>
-            </Link>      
+            </Link> 
+            <Link to='https://thesciencegym.net/'>
+              <div >
+                  <h2> test </g2>
+              </div>
+            </Link> 
             <h1>{this.props.title}</h1>
         </div>
     </div>
